@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { getEventById, getEvents, EventData } from '../../../lib/eventService';
 
 interface EventPageProps {
@@ -9,8 +10,7 @@ const EventPage: React.FC<EventPageProps> = ({ event }) => {
   return (
     <div>
       <h1>{event.title}</h1>
-      <p>{event.date}</p>
-      {event.thumbnail && <img src={event.thumbnail} alt={`Banner for ${event.title}`} />}
+      {event.thumbnail && <Image src={event.thumbnail} alt={`Banner for ${event.title}`} width={500} height={300} />}
       <p>{event.description}</p>
       <div dangerouslySetInnerHTML={{ __html: event.body || '' }} />
     </div>
@@ -20,19 +20,23 @@ const EventPage: React.FC<EventPageProps> = ({ event }) => {
 export async function generateStaticParams() {
   const { events } = getEvents();
   return events.map((event) => ({
-    id: event.title.replace(/\s+/g, '-').toLowerCase(),
+    id: event.id,
   }));
 }
 
-export default async function Page({ params }: { params: { id: string } }) {
-    const { id } = await params;
-    
-    console.log("Event name %%%:", id);
-    const event = getEventById(id);
+type Params = Promise<{ id: string }>;
 
-    if (!event) {
-        return <div>Event not found</div>;
-    }
+const Page = async ({ params }: { params: Params }) => {
+  const { id } = await params;
 
-    return <EventPage event={event} />;
-}
+  console.log("Event name %%%:", id);
+  const event = await getEventById(id);
+
+  if (!event) {
+    return <div>Event not found</div>;
+  }
+
+  return <EventPage event={event} />;
+};
+
+export default Page;

@@ -79,6 +79,10 @@ const filterEventsByQuery = (events: EventData[], query: string): EventData[] =>
 };
 
 const sortEventsByRelevance = (events: EventData[], query: string): EventData[] => {
+  const testing = query.toLowerCase();
+  if(testing === 'test'){
+    return events;
+  }
   // Implement sorting logic based on relevance
   return events;
 };

@@ -1,11 +1,12 @@
 // List of event cards
 import React from 'react';
 
-import Event, { EventProps } from '@/components/events/Event';
+import Event from '@/components/events/Event';
+import { EventCardData } from '@/lib/eventService';
 import style from './EventList.module.css';
 
 interface EventListProps {
-    events: EventProps[];
+    events: EventCardData[];
 }
 
 const EventList: React.FC<EventListProps> = ({ events }) => {

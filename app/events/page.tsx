@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import EventList from '../../components/events/EventList';
 import { EventCardData } from '../../lib/eventService';
 
@@ -12,8 +12,9 @@ const Page = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [events, setEvents] = useState<EventCardData[]>([]);
     const [totalEvents, setTotalEvents] = useState(0);
+    const [initialFetchDone, setInitialFetchDone] = useState(false);
 
-    const addTemporaryEvents = (count: number) => {
+    const addTemporaryEvents = useCallback((count: number) => {
         const newEvents = Array.from({ length: count }, (_, i) => ({
             id: `placeholder-${events.length + i + 1}`,
             title: `Placeholder ${events.length + i + 1}`,
@@ -23,13 +24,13 @@ const Page = () => {
             placeholder: true,
         }));
         setEvents((prevEvents) => [...prevEvents, ...newEvents]);
-    };
+    }, [events.length]);
 
-    const removeTemporaryEvents = (count: number) => {
+    const removeTemporaryEvents = useCallback((count: number) => {
         setEvents((prevEvents) => prevEvents.slice(0, prevEvents.length - count));
-    };
+    }, []);
 
-    const fetchEvents = async (page: number) => {
+    const fetchEvents = useCallback(async (page: number) => {
         const totalPlaceholders = (totalEvents == 0) ? pageResultLimit : totalEvents - ((page - 1) * pageResultLimit);
         addTemporaryEvents(totalPlaceholders);
         // await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate slow network
@@ -38,7 +39,7 @@ const Page = () => {
         removeTemporaryEvents(totalPlaceholders);
         setEvents((prevEvents) => [...prevEvents, ...data.events]);
         setTotalEvents(data.totalEvents);
-    };
+    }, [totalEvents, pageResultLimit, addTemporaryEvents, removeTemporaryEvents]);
 
     const handleSearch = async () => {
         // Already searched for this query
@@ -101,8 +102,11 @@ const Page = () => {
     };
 
     useEffect(() => {
-        fetchEvents(1);
-    }, []);
+        if (!initialFetchDone) {
+            fetchEvents(1);
+            setInitialFetchDone(true);
+        }
+    }, [fetchEvents, initialFetchDone]);
 
     return (
         <div>
