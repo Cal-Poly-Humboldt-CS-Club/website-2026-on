@@ -1,0 +1,9 @@
+/* Make a grid that had a number of rows based on an optimal width per column. The optimal width per column should be dynamic fitting between 300 and 500 pixels */
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+    width: 100%;
+    background: grey;
+}
