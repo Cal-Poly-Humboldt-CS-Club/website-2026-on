@@ -1,8 +1,8 @@
 ---
-title: 'Event 1 AH'
-id: 'event1'
-date: '2022-01-01'
-description: 'This is the first event'
+title: 'Microsoft Copilot (ONLINE)'
+id: 'microsoft-copilot-25'
+date: '2024-02-13'
+description: 'What is copilot? How do you use it? Find out from industry professionals at Microsoft'
 image: 'event1.jpg'
 ---
 

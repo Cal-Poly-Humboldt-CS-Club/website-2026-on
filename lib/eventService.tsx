@@ -33,7 +33,10 @@ export const transformToEventCardData = (event: EventData): EventCardData => {
 };
 
 const readEventFiles = (): EventData[] => {
-  // Bypass cache in development mode, else do the if statement body
+  // Only using cache in production mode
+  if(process.env.NODE_ENV !== 'production') {
+    console.log("Not production mode: Skipping events cache");
+  }
   if (process.env.NODE_ENV !== 'production' || !cachedEvents) {
     // Filling in the cachedEvents
     const filenames = fs.readdirSync(eventsDirectory);

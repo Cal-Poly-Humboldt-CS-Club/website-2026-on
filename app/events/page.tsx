@@ -31,6 +31,7 @@ const Page = () => {
     }, []);
 
     const fetchEvents = useCallback(async (page: number) => {
+        console.log('Fetching events with total events = ', totalEvents);
         const totalPlaceholders = (totalEvents == 0) ? pageResultLimit : totalEvents - ((page - 1) * pageResultLimit);
         addTemporaryEvents(totalPlaceholders);
         // await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate slow network
@@ -55,6 +56,7 @@ const Page = () => {
             setCurrentPage(1);
             setIsSearching(false);
             setEvents([]);
+            setTotalEvents(0);
             fetchEvents(1);
             return;
         }
@@ -63,6 +65,7 @@ const Page = () => {
         setIsSearching(true);
         setCurrentPage(1);
         setEvents([]);
+        setTotalEvents(0);
         addTemporaryEvents(pageResultLimit);
         // await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate slow network
         const res = await fetch(`/api/search?query=${searchQuery}&limit=${pageResultLimit}`);
@@ -78,6 +81,7 @@ const Page = () => {
         setCurrentPage(1);
         setSearchQuery('');
         setEvents([]);
+        setTotalEvents(0);
         fetchEvents(1);
     };
 
@@ -92,6 +96,7 @@ const Page = () => {
             const data = await res.json();
             removeTemporaryEvents(totalEvents - ((nextPage - 1) * pageResultLimit));
             setEvents((prevEvents) => [...prevEvents, ...data.events]);
+            setTotalEvents(data.totalEvents);
 
             return;
         }
@@ -103,6 +108,8 @@ const Page = () => {
 
     useEffect(() => {
         if (!initialFetchDone) {
+            setEvents([]);
+            setTotalEvents(0);
             fetchEvents(1);
             setInitialFetchDone(true);
         }

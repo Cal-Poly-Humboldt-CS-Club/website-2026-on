@@ -1,7 +1,7 @@
 // List of event cards
 import React from 'react';
 
-import Event from '@/components/events/Event';
+import EventCard from '@/components/events/EventCard';
 import { EventCardData } from '@/lib/eventService';
 import style from './EventList.module.css';
 
@@ -15,7 +15,7 @@ const EventList: React.FC<EventListProps> = ({ events }) => {
         <div className={style.container}>
             {events.length === 0 && <p>No events found</p>}
             {events.map((event) => (
-                <Event
+                <EventCard
                     id={event.id}
                     key={event.id}
                     title={event.title}
