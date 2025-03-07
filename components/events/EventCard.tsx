@@ -38,8 +38,9 @@ const Event: React.FC<EventCardData> = ({ title, date, description, thumbnail, p
           </Link>
           {/* <Link href='/events/microsoft-copilot-25'> */}
           <Link href={`/events/${id}`}>
-            <h2 className={style.title}>{title}
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABRklEQVR4nO2Yu2rDQBBFz3c4tf8lSuNKuMgPJoV/KYbI2IUJxGkTssGwhQm7tnb2NYa5MJXQ1T2r0T4EJpPJpFlLYAN8AS6xtsAQ8Hzy1+b6HICVNPyHIPhlTQHfncBnLwHYZIaPAUwCn18JgKRtLusNeAz4Dv5aql+ysg0SNQLf9wow3givGmAdCB+CUQkwBsL+AM/3AHAtPNoBboVXDTAnvFqAueFVAqSE599+6bzwdQWITZXrK/cMftsxRVb0ZgCpI19MJQC6hS8B0DV8LkD38DkAkg+WyMlt5yt0sqsCUHLkt62n0dJt41ouZDV63rUCWBXq+W4AU4XwTQH2FcI3b6F3P1OIfkBFpG432vz5zgDy5OwNYN9AllzuAJ4CJr3qUwLwqiC48/UiAXgAjgrCH4EFQi08fY92Ovlni8ObTCYT1fUHGyA91qdVgIkAAAAASUVORK5CYII=" alt="external-link"></img>
+            <h2 className={style.title}>
+              {title}
+              <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAABRklEQVR4nO2Yu2rDQBBFz3c4tf8lSuNKuMgPJoV/KYbI2IUJxGkTssGwhQm7tnb2NYa5MJXQ1T2r0T4EJpPJpFlLYAN8AS6xtsAQ8Hzy1+b6HICVNPyHIPhlTQHfncBnLwHYZIaPAUwCn18JgKRtLusNeAz4Dv5aql+ysg0SNQLf9wow3givGmAdCB+CUQkwBsL+AM/3AHAtPNoBboVXDTAnvFqAueFVAqSE599+6bzwdQWITZXrK/cMftsxRVb0ZgCpI19MJQC6hS8B0DV8LkD38DkAkg+WyMlt5yt0sqsCUHLkt62n0dJt41ouZDV63rUCWBXq+W4AU4XwTQH2FcI3b6F3P1OIfkBFpG432vz5zgDy5OwNYN9AllzuAJ4CJr3qUwLwqiC48/UiAXgAjgrCH4EFQi08fY92Ovlni8ObTCYT1fUHGyA91qdVgIkAAAAASUVORK5CYII=" alt="external-link"></img>
             </h2>
           </Link>
           <p className={style.description}>{description}</p>

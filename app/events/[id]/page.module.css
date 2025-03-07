@@ -1,0 +1,159 @@
+.page {
+    background: white;
+    color: black;
+}
+.banner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #404040;
+    aspect-ratio: 5/3;
+    border-radius: 22px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.backLink {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding-left: 12px;
+    padding-right: 12px;
+    margin-bottom: 16px;
+    margin-top: 0.6rem;
+    gap: 8px;
+}
+.icon {
+    width: 30px;
+    height: 30px;
+    /* filter: invert(100%); */
+}
+
+.tags {
+    margin-bottom: 100px;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 10% 80% 10%;
+}
+.columnSide {
+    grid-column: 1;
+}
+.columnCenter {
+    grid-column: 2;
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media screen and (max-width: 768px) {
+    .backLink {
+        margin-left: 16px;
+        padding: 0px;
+    }
+    .row {
+        margin-left: 16px;
+        grid-template-columns: calc(100% - 16px);
+    }
+    .columnSide, .columnCenter {
+        grid-column: 1;
+    }
+}
+@media screen and (min-width: 1300px) {
+    .backLink {
+        margin-left: calc(5vw - 30px);
+    }
+    .row {
+        grid-template-columns: 15% 70% 15%;
+    }
+    .columnSide {
+        grid-column: 1;
+    }
+    .columnCenter {
+        grid-column: 2;
+    } 
+}
+@media screen and (min-width: 1800px) {
+    .columnCenter {
+        max-width: 1400px;
+    }
+}
+
+.row h1 {
+    font-size: 2.8rem;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+}
+.row p {
+    font-size: 1.2rem;
+    margin-bottom: 16px;
+    letter-spacing: 0.01em;
+}
+
+.markdown h1 {
+    font-size: 2.2rem;
+    margin-bottom: 16px;
+}
+.markdown p {
+    margin-bottom: 24px;
+}
+
+/* Links */
+.markdown a {
+    color: #1499A9;
+    text-decoration: none;
+    border-bottom: 1px solid #1499A9;
+}
+.markdown a:visited {
+    color: #14657B;
+}
+.markdown a svg {
+    width: 1em;
+    height: 1em;
+    margin-left: 0.25em;
+    margin-bottom: -0.15em;
+
+    /* fill: #0070f3; */
+    fill: #1499A9;
+}
+
+/* Images */
+.markdown img {
+    width: calc(100% + 32px);
+    margin-left: -16px;
+
+    height: auto;
+    max-height: 80vh;
+    border-radius: 15px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    object-fit: cover;
+}
+.markdown img + span {
+    display: block;
+    margin-top: -8px;
+    font-style: italic;
+    font-weight: 250;
+    margin-bottom: 24px;
+}
+
+/* Modifying full-width vs slightly-smaller-width elements to be all full at smaller resolution */
+@media screen and (max-width: 500px) {
+    .backLink {
+        margin-left: 0px
+    }
+    .columnCenter {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .markdown img {
+        width: calc(100% + 0px);
+        margin-left: -0px;
+    }
+}

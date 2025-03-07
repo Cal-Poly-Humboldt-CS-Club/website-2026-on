@@ -6,10 +6,24 @@ description: 'What is copilot? How do you use it? Find out from industry profess
 image: 'event1.jpg'
 ---
 
-# This is event 1
+# This is event 1 oooo!
 
 This event can have headers, paragraphs, images, tables, and code snippits. Really, you can do what ever you can do in most markdown.
 
-[Test Image](./example_image.jpg)
+![Test Image](../event-files/example_image.jpg "Nasa")
 
-Here is another paragraph after the image.
+
+You can add links inside paragraphs such as this [link to events page](../events) which should take you back to the page of events on the website.
+
+[Example link to google.com](https://google.com)
+
+Here is another paragraph before a block of code. This code `block` can do coloring:
+
+```js
+    // Code block
+    int a = 30;
+    int b = -10;
+    return a + b;
+```
+
+And here is a final paragraph!
