@@ -96,22 +96,31 @@
     letter-spacing: 0.01em;
 }
 
+.markdown {
+    margin-bottom: 100px;
+}
 .markdown h1 {
     font-size: 2.2rem;
     margin-bottom: 16px;
 }
 .markdown p {
     margin-bottom: 24px;
+    line-height: 1.75rem;
 }
 
 /* Links */
 .markdown a {
     color: #1499A9;
+    color: #2c753a;
     text-decoration: none;
-    border-bottom: 1px solid #1499A9;
+    border-bottom: 1px solid #2c753a;
+    padding-left: 1px;
+    padding-right: 1px;
+    margin-left: -1px;
+    margin-right: -1px;
 }
 .markdown a:visited {
-    color: #14657B;
+    color: #035714;
 }
 .markdown a svg {
     width: 1em;
@@ -120,7 +129,10 @@
     margin-bottom: -0.15em;
 
     /* fill: #0070f3; */
-    fill: #1499A9;
+    fill: #2c753a;
+}
+.markdown a:visited svg {
+    fill: #035714;
 }
 
 /* Images */
@@ -140,7 +152,40 @@
     margin-top: -8px;
     font-style: italic;
     font-weight: 250;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
+}
+
+/* Code block */
+.markdown pre {
+    background-color: #f6faf7;
+    border-radius: 10px;
+    padding: 16px;
+    overflow-x: auto;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+.markdown pre code {
+    /* font-family: monospace; */
+    font-size: 0.9rem;
+    background: none !important;
+    max-height: min(80vh, 900px);
+    overflow: scroll;
+    line-height: 1.2rem;
+}
+.markdown p code {
+    font-size: 1rem;
+    background-color: #eef3ef;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Lists */
+.markdown ul {
+    padding-left: 24px;
+    margin-bottom: 32px;
+}
+.markdown ul li {
+    margin-bottom: 8px;
 }
 
 /* Modifying full-width vs slightly-smaller-width elements to be all full at smaller resolution */

@@ -1,10 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
 import { getEventById, getEvents, EventData } from '../../../lib/eventService';
-// import {createRoot} from 'react-dom/client'
-import Markdown from 'react-markdown'
-import remarkGfm from 'remark-gfm'
-import styles from './page.module.css'
+import Markdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import rehypeHighlight from 'rehype-highlight';
+// import './vs.min.css'; // Import Highlight.js CSS
+import './stackoverflow-light.min.css'; // Import Highlight.js CSS
+import styles from './page.module.css';
 import Link from 'next/link';
 
 // Custom markdown components
@@ -79,12 +81,13 @@ const Page = async ({ params }: { params: Params }) => {
       {/* Date/Time/Location */}
       {/* Content */}
       <Markdown
-        className={`${styles.columnCenter} ${styles.markdown}`}
-        remarkPlugins={[remarkGfm]}
-        components={{ a: CustomLink, img: CustomImage }}
-      >
-        {event.body}
-      </Markdown>
+          className={`${styles.columnCenter} ${styles.markdown}`}
+          remarkPlugins={[remarkGfm]}
+          rehypePlugins={[rehypeHighlight]}
+          components={{ a: CustomLink, img: CustomImage }}
+        >
+          {event.body}
+        </Markdown>
     </div>
   </div>
   // return <EventPage event={event} />;
