@@ -6,6 +6,8 @@ export interface EventData {
   id: string;
   title: string;
   date: string;
+  time: string;
+  location: string;
   description: string;
   thumbnail?: string | undefined;
   tags?: string[];
@@ -56,11 +58,13 @@ const readEventFiles = (): EventData[] => {
       const id = data.id || generateEventId(data.title || filename);
       const title = data.title || '';
       const date = data.date || '';
+      const time = data.time || '';
+      const location = data.location || '';
       const description = data.description || '';
       const thumbnail = data.thumbnail || undefined;
       const tags = data.tags || [];
 
-      return { id, title, date, description, thumbnail, tags, body: content } as EventData;
+      return { id, title, date, time, location, description, thumbnail, tags, body: content } as EventData;
     }).filter(event => event !== null) as EventData[];
 
     cachedEvents = events;

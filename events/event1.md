@@ -2,8 +2,13 @@
 title: 'Microsoft Copilot (ONLINE)'
 id: 'microsoft-copilot-25'
 date: '2024-02-13'
+time: '6-7:30 pm'
+location: 'bss 302'
 description: 'What is copilot? How do you use it? Find out from industry professionals at Microsoft'
 image: 'event1.jpg'
+tags:
+    - 'talk'
+    - 'AI'
 ---
 
 # This is event 1 oooo!

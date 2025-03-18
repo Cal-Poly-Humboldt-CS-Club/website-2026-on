@@ -33,7 +33,54 @@
 }
 
 .tags {
-    margin-bottom: 100px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 24px;
+    margin-bottom: 45px;
+}
+
+.details {
+    width: calc(100% + 32px);
+    margin-left: -16px;
+    gap: 16px;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    background: #eef3ef;
+    border-radius: 22px;
+    padding: 16px;
+    margin-bottom: 45px;
+}
+
+.details .block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 32px;
+    padding-bottom: 32px;
+    gap: 8px;
+    background: #346241;
+    border-radius: 15px;
+    flex-grow: 1;
+    flex-basis: 0;
+    min-width: fit-content;
+}
+.details .block p {
+    font-weight: 800;
+    font-size: 2.2rem;
+    margin-bottom: 8px;
+    text-align: center;
+    padding: 0 16px;
+    color: white;
+}
+.details .block img {
+    width: 80px;
+    height: 80px;
 }
 
 .row {
@@ -77,6 +124,7 @@
     }
     .columnCenter {
         grid-column: 2;
+        padding: 0;
     } 
 }
 @media screen and (min-width: 1800px) {
@@ -87,11 +135,11 @@
 
 .row h1 {
     font-size: 2.8rem;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
     letter-spacing: -0.01em;
 }
 .row p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     margin-bottom: 16px;
     letter-spacing: 0.01em;
 }
@@ -104,23 +152,23 @@
     margin-bottom: 16px;
 }
 .markdown p {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
     line-height: 1.75rem;
 }
 
 /* Links */
 .markdown a {
-    color: #1499A9;
-    color: #2c753a;
+    /* color: #1499A9; */
+    color: #346241;
     text-decoration: none;
-    border-bottom: 1px solid #2c753a;
+    border-bottom: 1px solid #346241;
     padding-left: 1px;
     padding-right: 1px;
     margin-left: -1px;
     margin-right: -1px;
 }
 .markdown a:visited {
-    color: #035714;
+    color: #1a4426;
 }
 .markdown a svg {
     width: 1em;
@@ -129,10 +177,10 @@
     margin-bottom: -0.15em;
 
     /* fill: #0070f3; */
-    fill: #2c753a;
+    fill: #346241;
 }
 .markdown a:visited svg {
-    fill: #035714;
+    fill: #1a4426;
 }
 
 /* Images */
@@ -166,7 +214,7 @@
 }
 .markdown pre code {
     /* font-family: monospace; */
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     background: none !important;
     max-height: min(80vh, 900px);
     overflow: scroll;
@@ -192,6 +240,10 @@
 @media screen and (max-width: 500px) {
     .backLink {
         margin-left: 0px
+    }
+    .details {
+        width: calc(100% + 0px);
+        margin-left: -0px;
     }
     .columnCenter {
         padding-left: 0px;
