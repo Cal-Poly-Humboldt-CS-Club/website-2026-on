@@ -34,7 +34,13 @@ const Event: React.FC<EventCardData> = ({ title, date, description, thumbnail, p
             <div className={style.date}>
               <p>{date}</p>
             </div>
-            {thumbnail && <Image className={style.image} src={thumbnail} alt={`Banner for ${title}`} width={500} height={300} />}
+            {thumbnail && <Image
+              className={style.image} 
+              src={thumbnail}
+              alt={`Banner for ${title}`} 
+              width={500} 
+              height={300}
+            />}
           </Link>
           {/* <Link href='/events/microsoft-copilot-25'> */}
           <Link href={`/events/${id}`}>

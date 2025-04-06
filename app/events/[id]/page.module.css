@@ -1,7 +1,7 @@
-.page {
-    background: white;
+/* .page {
+    background: ;
     color: black;
-}
+} */
 .banner {
     display: flex;
     justify-content: center;
@@ -49,7 +49,7 @@
     flex-direction: row;
     flex-grow: 1;
     flex-wrap: wrap;
-    background: #eef3ef;
+    background: var(--panel-bg);
     border-radius: 22px;
     padding: 16px;
     margin-bottom: 45px;
@@ -64,7 +64,7 @@
     padding-top: 32px;
     padding-bottom: 32px;
     gap: 8px;
-    background: #346241;
+    background: var(--digitalMoss);
     border-radius: 15px;
     flex-grow: 1;
     flex-basis: 0;
@@ -76,7 +76,7 @@
     margin-bottom: 8px;
     text-align: center;
     padding: 0 16px;
-    color: white;
+    color: var(--text-lightest);
 }
 .details .block img {
     width: 80px;
@@ -137,6 +137,7 @@
     font-size: 2.8rem;
     margin-bottom: 12px;
     letter-spacing: -0.01em;
+    color: var(--text-bold-color);
 }
 .row p {
     font-size: 1.1rem;
@@ -159,16 +160,17 @@
 /* Links */
 .markdown a {
     /* color: #1499A9; */
-    color: #346241;
+    color: var(--link-color);
     text-decoration: none;
-    border-bottom: 1px solid #346241;
+    border-bottom: 1px solid var(--link-color);
     padding-left: 1px;
     padding-right: 1px;
     margin-left: -1px;
     margin-right: -1px;
 }
 .markdown a:visited {
-    color: #1a4426;
+    color: var(--link-visited-color);
+    border-bottom: 1px solid var(--link-visited-color);
 }
 .markdown a svg {
     width: 1em;
@@ -177,10 +179,10 @@
     margin-bottom: -0.15em;
 
     /* fill: #0070f3; */
-    fill: #346241;
+    fill: var(--link-color);
 }
 .markdown a:visited svg {
-    fill: #1a4426;
+    fill: var(--link-visited-color);
 }
 
 /* Images */
@@ -203,9 +205,9 @@
     margin-bottom: 32px;
 }
 
-/* Code block */
+/* Large format code block */
 .markdown pre {
-    background-color: #f6faf7;
+    background-color: var(--panel-bg-tinted);
     border-radius: 10px;
     padding: 16px;
     overflow-x: auto;
@@ -220,9 +222,11 @@
     overflow: scroll;
     line-height: 1.2rem;
 }
+
+/* Inline code block */
 .markdown p code {
     font-size: 1rem;
-    background-color: #eef3ef;
+    background-color: var(--panel-bg-tinted-darker);
     padding: 2px 6px;
     border-radius: 4px;
 }

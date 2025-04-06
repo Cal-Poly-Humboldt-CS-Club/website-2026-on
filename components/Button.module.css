@@ -1,7 +1,24 @@
 .button {
-    padding: 10px 20px;
-    border-radius: 5px;
-    background-color: #0070f3;
-    color: #fff;
-    border: none;
-  }
+  height: fit-content;
+  padding: 12px 35px;
+  border-radius: calc(var(--btn-font-size) + 30px);
+  background-color: var(--yarnYellow);
+  /* font-size: var(--text-darkest); */
+  font-weight: 700;
+  color: var(--text-darkest);
+  border: none;
+}
+
+.icon {
+  padding: 7.5px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon > * {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) saturate(100%) sepia(1) hue-rotate(0deg) saturate(1000%) brightness(1) drop-shadow(0 0 0 var(--text-darkest));
+  /* fill: var(--text-darkest); */
+}

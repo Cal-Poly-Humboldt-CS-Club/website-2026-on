@@ -4,8 +4,10 @@ import { getEventById, getEvents, EventData } from '../../../lib/eventService';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
-// import './vs.min.css'; // Import Highlight.js CSS
-import './stackoverflow-light.min.css'; // Import Highlight.js CSS
+// import './stackoverflow-light.min.css'; // Import Highlight.js CSS
+// import './stackoverflow-dark.min.css'; // Import Highlight.js CSS
+import './vs2015.min.css';
+// import './vs.min.css';
 import styles from './page.module.css';
 import Link from 'next/link';
 import Tag from '../../../components/events/Tag';
@@ -18,16 +20,24 @@ interface EventPageProps {
   event: EventData;
 }
 
-const EventPage: React.FC<EventPageProps> = ({ event }) => {
-  return (
-    <div>
-      <h1>{event.title}</h1>
-      {event.thumbnail && <Image src={event.thumbnail} alt={`Banner for ${event.title}`} width={500} height={300} />}
-      <p>{event.description}</p>
-      <div dangerouslySetInnerHTML={{ __html: event.body || '' }} />
-    </div>
-  );
-};
+// const EventPage: React.FC<EventPageProps> = ({ event }) => {
+//   return (
+//     <div>
+//       <h1>{event.title}</h1>
+//       {event.thumbnail && <Image key={`
+//           ${event.id}-page`} 
+//           // src={event.thumbnail} 
+//           src={`${event.thumbnail}?context=page`}
+//           alt={`Banner for ${event.title}`} 
+//           width={1000} 
+//           height={600} 
+//           sizes="(max-width: 768px) 100vw, 1000px"
+//         />}
+//       <p>{event.description}</p>
+//       <div dangerouslySetInnerHTML={{ __html: event.body || '' }} />
+//     </div>
+//   );
+// };
 
 export async function generateStaticParams() {
   const { events } = getEvents();
@@ -59,7 +69,7 @@ const Page = async ({ params }: { params: Params }) => {
     {/* Banner */}
     <div className={styles.row}>
       <div className={`${styles.banner} ${styles.columnCenter}`}>
-        {event.thumbnail && <Image src={event.thumbnail} alt={`Banner for ${event.title}`} width={500} height={300} />}
+        {event.thumbnail && <Image src={event.thumbnail} alt={`Banner for ${event.title}`} width={1000} height={600} />}
       </div>
     </div>
 
@@ -89,7 +99,18 @@ const Page = async ({ params }: { params: Params }) => {
     <div className={styles.row}>
       {/* Share options */}
       <div className="sharing">
-
+        {/* <div className="share-title">
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAB/ElEQVR4nO2Yu0oDQRSGPwtttNJKTBWx18pHSLTQKNEoCLaKT2FjL/gCWmkbBfMCinjBViwMJF5Qg6ARxAusLIywDJPdnbCbncH94UBg5mT+b3Z25sxCqlSpktIc0ADugAKWqQt4BhwR30AJy/ToAbASYlaYthqiqID4AZawSMUUwhAVbXgSvUAe2ADKwBXwAnxJxuUXu5D0np8DdoEPH6OOT9STMj8DXLZp2vFErdPGs0AlAuNOO0toGngSJ+VUG+bngVcfQ9fAFrAAjAH9QLc4wCI52O48f3CrmbvuM4s7wHiLvFKUp7I8eFhttjB/AAz75JWiLinaAVDN/DuwHJBXiqMe0gWYV+Q8AKMh3rXvOIo5HYCs4oV1zY+EGMfd22OpRHUAKoplEzTzf7qPw7wOwIyib9Cal5dQDbgRv+k0wIXU7xBD5IQAyCnWr99WaRzAntRnG4PkBAD0KarKVieskQB5RW2DTQAbUrtbmFkFUJbaF7EM4EpqD3twGQPQkNoHsAzgU2rvwTKAqqfNLQPi1qS4WLkxEQXAhKgk62JLjVtV3QnTvQ/ELUfXj/UAb1LCEMkpI3lxvQXqREraTwgiIz4IeL0ch0lcUzw2U2IlDECP4rJiQpyKD2ChNAicG2DaEXEmPGnJpV0FjoBmAqabYuwVnZlPleq/6RcoJ/YXV/h0igAAAABJRU5ErkJggg==" alt="share"></img>
+          Share
+        </div>
+        <div className="links">
+          <Link href="https://www.facebook.com/">
+            <img src="https://img.icons8.com/material-rounded/48/000000/facebook.png" alt="facebook"/>
+          </Link>
+          <Link href="https://www.twitter.com/">
+            <img src="https://img.icons8.com/material-rounded/48/000000/twitter.png" alt="twitter"/>
+          </Link>
+        </div> */}
       </div>
       {/* Content */}
       <div className={styles.columnCenter}>

@@ -1,14 +1,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Colors */
+  --bitDepthBlack: #231F20;
+  --bitDepthBlack: #1e1b1c;
+  --pixelPureWhite: #FFFFFF;
+  --digitalMoss: #346241;
+  --digitalMoss-lighter: #49965f;
+  --neuralNook: #2D544B;
+  --neuralNook-lighter: #50957b;
+  --yarnYellow: #FFC72C;
+  --compilerCoral: #B9542A;
+  --cyanCircuitry: #42A4B2;
+  --terminalTeal: #1D464E;
+
+  --text-light: #f4f4f4;
+  --text-lightest: #ffffff;
+
+  --text-dark: #434343;
+  --text-darkest: #262626;
+
+  --pixelPureWhite-10: #f2f2f2;           /* little more dark than pixelPureWhite */
+  --pixelPureWhite-20: #e6e6e6;           /* little more dark than pixelPureWhite-10 */
+  --pixelPureWhite-tint: #f6faf7;         /* tinting pixelPureWhite with digitalMoss */
+  --pixelPureWhite-tint-darker: #eef3ef;  /* tinting pixelPureWhite with more digitalMoss */
+
+  --bitDepthBlack-10: #232625;            /* little neuralNook one bitDepthBlack */
+  --bitDepthBlack-tint: #242624;          /* tinting bitDepthBlack with digitalMoss */
+  --bitDepthBlack-tint: #2b2c2b;          /* tinting bitDepthBlack with digitalMoss */
+  --bitDepthBlack-tint-lighter: #282c28;   /* tinting bitDepthBlack with more digitalMoss */
+
+  /* Styles */
+  /* Light-mode here */
+  --background: var(--pixelPureWhite);
+
+  --panel-bg: var(--pixelPureWhite-10);
+  --panel-bg-tinted: var(--pixelPureWhite-tint);
+  --panel-bg-tinted-darker: var(--pixelPureWhite-tint-darker);
+
+  --text-color: var(--text-dark);
+  --text-bold-color: var(--text-darkest);
+
+  --link-color: var(--digitalMoss);
+  --link-visited-color: var(--neuralNook);
+
+  --btn-bg: var(--yarnYellow);
+  --btn-font-size: 1.2rem;
 }
 
 @media (prefers-color-scheme: dark) {
+  /* Dark-mode here */
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--bitDepthBlack);
+
+    --panel-bg: var(--bitDepthBlack-10);
+    --panel-bg-tinted: var(--bitDepthBlack-tint);
+    --panel-bg-tinted-darker: var(--bitDepthBlack-tint-lighter);
+
+    --link-color: var(--digitalMoss-lighter);
+    --link-visited-color: var(--neuralNook-lighter);
+
+    --text-color: var(--text-light);
+    --text-bold-color: var(--text-lightest);
   }
 }
 
@@ -19,7 +72,7 @@ body {
 }
 
 body {
-  color: var(--foreground);
+  color: var(--text-color);
   background: var(--background);
   font-family: "Inter", Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;

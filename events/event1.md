@@ -5,7 +5,7 @@ date: '2024-02-13'
 time: '6-7:30 pm'
 location: 'bss 302'
 description: 'What is copilot? How do you use it? Find out from industry professionals at Microsoft'
-image: 'event1.jpg'
+thumbnail: '/event-files/abc.jpg'
 tags:
     - 'talk'
     - 'AI'
