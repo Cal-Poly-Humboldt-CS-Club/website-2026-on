@@ -2,11 +2,10 @@
 .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 500px));
-    gap: 1rem;
-    padding: 1rem;
-    width: 100%;
-    background: grey;
+    gap: 16px;
+    padding: 24px;
     justify-content: center;
+    width: 100%;
 }
 
 /* .container {

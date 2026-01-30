@@ -1,0 +1,58 @@
+.content {
+    max-width: 1000px;
+}
+.images {
+    height: 520px;
+    display: flex;
+    flex-direction: row;
+    border-radius: 22px;
+    justify-content: center;
+    align-items: center;
+}
+.images > *{
+    width: 300px;
+    height: 300px;
+    transition: width 1s ease, opacity 0.4s ease 0.3s, transform 1s ease;
+    background: grey;
+    border-radius: 15px;
+    box-shadow: black 0px 5px 10px;
+}
+.controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin-right: 24px;
+    float: right;
+}
+.images > .hidden {
+    width: 0;
+    opacity: 0;
+}
+.images > .onDeckLeft {
+    position: relative;
+    transform: translate(200px, 145px) rotate(-15deg);
+    opacity: 0;
+}
+.images > .first {
+    position: relative;
+    transform: translate(80px, 45px) rotate(-15deg);
+}
+.images > .second {
+    position: relative;
+    transform: translate(10px, -25px) rotate(-4deg);
+}
+.images > .third {
+    position: relative;
+    z-index: -1;
+    transform: translate(-10px, -15px) rotate(2deg);
+}
+.images > .fourth {
+    position: relative;
+    transform: translate(-80px, 38px) rotate(19deg);
+}
+.images > .onDeckRight {
+    position: relative;
+    transform: translate(-200px, 138px) rotate(19deg);
+    opacity: 0;
+}

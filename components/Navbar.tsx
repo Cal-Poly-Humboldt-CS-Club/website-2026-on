@@ -36,11 +36,10 @@ const Navbar: React.FC = () => {
 
             {/* Buttons */}
             <div className={style.buttons}>
-                <Button href='https://discord.com' style='icon'>
+                <Button href='https://discord.com' isIcon>
                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAACf0lEQVR4nO2Yy4tOcRjHP+MS2biExmXkUkPIJQtWlMgGJUwYZWE/sXBNyB9gI5QshIVZsHBXFqIpITvlupIiZiRMTNMcPfUs3k6/9/ye3znvmfeU37ee3XO+l3Oe3+V9ISIiIiIiIj/mArMLPD9HOYYVI4AtwBMgAYaAwzl4juizwtEDbAVGUjI2AW9UtLZ6NZgV0tvn4HkLbC7D+ASg2yFYWzuNIaSn08PVrZoNwVjgpUewjHoGjGlEgBNNMJ9oyTophEnAjyYG6APGFwlwsInmE619ec3LYntfgQCvgZY8AVZXwHyitSpPgDMVMJ5onQ41L5/sUwWMJ1ofQ8doaQC5HDrTgNHAoZrrQb26BMwA2oCrATqLQwIcMJI+dZy+FzP676feZAvw0Ki1PyTAAyPp9sCvt9bRv8GodcdqXt7KdyNpu+N5GaWBOv1yMKYx1ajVa10H7QFzOT8wgOuCNiVAz/TbYUcAofSmsTyjf42jf12AXoclwMkAwheOHyHXMvpvOfTuBugdtwS4HEAodROYp1vpWUP/eWCirocLgVqyBXvRE0g6nPXYEuBDBYwmdeqdJcAXD8ltYLrWXp3hvznM/ASuA3t0/GYC9zzPfLYE+O0hEaE0xgHrgVNq6hXwFfijRuVe9Ry4oqe83C5HOXhmebR/WQJ885DImy8LbR5teSledBiO9NYSzLcaRmibleyY51Y5qDuCjMOCAqaXAUd15xvM0BvSviB01vnzyUW+JIf5FYard6IedpETctE6B/RnCMiizYsbGbz9qi0eCmMy0AU8Sm2Z8tkXFuBdlBqdAdXoUs1SIFvmSh2xjQ36v3W3bq3CHRERERER8f/gH1f//0vffP1PAAAAAElFTkSuQmCC" alt="discord"></img>
                 </Button>
-                <Button
-                    href="/contact">
+                <Button href="/contact">
                     Contact
                 </Button>
             </div>

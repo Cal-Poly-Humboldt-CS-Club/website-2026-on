@@ -1,0 +1,7 @@
+.nav {
+    display: grid;
+    grid-template-columns: auto max-content;
+    gap: 8px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}

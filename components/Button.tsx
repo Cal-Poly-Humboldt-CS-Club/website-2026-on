@@ -1,31 +1,53 @@
 'use client';
-// Generic Button component, styled with rounded corners
 import React from 'react';
 import styles from './Button.module.css';
 
 interface ButtonProps {
   children: React.ReactNode;
   href?: string;
-  style?: string;
+  variant?: 'primary' | 'secondary' | 'hovershow'; // For primary/secondary/other styles
+  isIcon?: boolean; // For icon-specific styles
+  disabled?: boolean; // For disabled state
+  onClick?: () => void;
+  ariaLabel?: string; // Accessible label for icon-only buttons
 }
 
-const Button = ({ children, href, style }: ButtonProps) => {
-  var additionalStyle = "";
-  if(style === 'icon') {
-    additionalStyle = styles.icon;
-  }
+const Button = ({
+  children,
+  href,
+  variant = 'primary',
+  isIcon = false,
+  disabled = false,
+  onClick,
+  ariaLabel,
+}: ButtonProps) => {
+  const buttonClass = `${styles.button} ${styles[variant]} ${isIcon ? styles.icon : ''}`.trim();
 
-  return (
-    href ? (
-      <a href={href} className={`${styles.button} ${additionalStyle}`}>
+  // If its a link
+  if (href) {
+    return (
+      <a
+        href={href}
+        className={buttonClass}
+        role="button" // Ensure it behaves like a button
+        aria-label={ariaLabel} // Accessible label for icon-only links
+      >
         {children}
       </a>
-    ) : (
-      <button className={`${styles.button} ${additionalStyle}`}>
-        {children}
-      </button>
-    )
-  )
+    );
+  }
+
+  // If its a pure button
+  return (
+    <button
+      onClick={onClick}
+      className={buttonClass}
+      disabled={disabled} // Native disabled attribute
+      aria-label={ariaLabel} // Accessible label for icon-only buttons
+    >
+      {children}
+    </button>
+  );
 };
 
 export default Button;
