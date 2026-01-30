@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React from 'react';
 import SearchBox from "../components/SearchBox";
 import Button from './Button';
 import EventList from './events/EventList';
@@ -7,11 +7,11 @@ import { useEventSearch } from '../hooks/useEventSearch';
 
 import styles from "./HomeSearch.module.css";
 
-interface Event {
-    id: number;
-    name: string;
-    date: string;
-}
+// interface Event {
+//     id: number;
+//     name: string;
+//     date: string;
+// }
 
 const HomeSearch: React.FC = () => {
     const {

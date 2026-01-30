@@ -7,8 +7,8 @@ interface TagProps {
 }
 
 const Tag: React.FC<TagProps> = ({ label }) => {
-    var linkBase = '/events?search=""&tag=';
-    var link = linkBase + label;
+    const linkBase = '/events?search=""&tag=';
+    const link = linkBase + label;
 
     return (
         <Link href={link} className={style.tag}>

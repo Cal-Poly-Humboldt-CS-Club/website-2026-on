@@ -2,35 +2,36 @@ import React from 'react';
 import style from './Navbar.module.css';
 import Button from '../components/Button';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Navbar: React.FC = () => {
     return (
         <nav className={style.nav}>
             {/* Logo */}
             <div className={style.logo}>
-                <a href="/">
+                <Link href="/">
                     <Image
                         src="/logo.png"
                         alt="Logo"
                         width={50}
                         height={50}
                     />
-                </a>
+                </Link>
             </div>
 
             {/* Page Links */}
             <ul className={style.links}>
                 <li>
-                    <a href="/join" className="hover:text-gray-400">Join</a>
+                    <Link href="/" className="hover:text-gray-400">Home</Link>
                 </li>
                 <li>
-                    <a href="/events" className="hover:text-gray-400">Events</a>
+                    <Link href="/join" className="hover:text-gray-400">Join</Link>
                 </li>
                 <li>
-                    <a href="/shop" className="hover:text-gray-400">Shop</a>
+                    <Link href="/events" className="hover:text-gray-400">Events</Link>
                 </li>
                 <li>
-                    <a href="/sponsors" className="hover:text-gray-400">Sponsors</a>
+                    <Link href="/sponsors" className="hover:text-gray-400">Sponsors</Link>
                 </li>
             </ul>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import { getEventById, getEvents, EventData } from '../../../lib/eventService';
+import { getEventById, getEvents } from '../../../lib/eventService';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
@@ -16,9 +16,9 @@ import Tag from '../../../components/events/Tag';
 import CustomLink from '../../../components/markdown/link';
 import CustomImage from '../../../components/markdown/image';
 
-interface EventPageProps {
-  event: EventData;
-}
+// interface EventPageProps {
+//   event: EventData;
+// }
 
 // const EventPage: React.FC<EventPageProps> = ({ event }) => {
 //   return (

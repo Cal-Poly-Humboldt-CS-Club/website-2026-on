@@ -35,7 +35,7 @@ export default function Home() {
       <div className={styles.aboutSection}>
           <h2>About</h2>
           <p>
-            The Computer Science Club at Cal Poly Humboldt is a vibrant community where students come together to explore technology, collaborate on projects, and share knowledge. Our mission is to foster an inclusive environment that encourages learning, creativity, and innovation. Whether you're a seasoned programmer or just starting out, there's a place for you here to grow, connect, and make lasting memories.
+            The Computer Science Club at Cal Poly Humboldt is a vibrant community where students come together to explore technology, collaborate on projects, and share knowledge. Our mission is to foster an inclusive environment that encourages learning, creativity, and innovation. Whether you are a seasoned programmer or just starting out, there is a place for you here to grow, connect, and make lasting memories.
           </p>
           <FanCarousel images={[
             { src: "/logo.png", alt: "todo" },
