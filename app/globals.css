@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700&family=Black+Han+Sans&display=swap');
+
 
 :root {
   /* Colors */
@@ -47,7 +49,7 @@
   --btn-bg: var(--yarnYellow);
   --btn-font-size: 1.2rem;
 
-  --input-bg: #282426;
+  --input-bg: var(--digitalMoss-lighter);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -82,7 +84,15 @@ body {
 
 body,
 button {
-  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-family: "Almarai", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+h1,
+h2 {
+  font-family: "Black Han Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 * {

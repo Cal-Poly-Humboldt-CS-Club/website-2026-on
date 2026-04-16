@@ -1,12 +1,28 @@
 .button {
   height: fit-content;
-  padding: 10px 35px;
+  padding: 9px 35px;
   border-radius: calc(var(--btn-font-size) + 20px);
   font-size: var(--btn-font-size);
-  /* font-family: "Inter", Arial, Helvetica, sans-serif; */
   font-weight: 700;
   border: none;
   cursor: pointer;
+  box-shadow: 0px 3.5px var(--bitDepthBlack);
+  transition: translate 0.5s;
+  text-decoration: none;
+
+  --transition-hover-out: 0.20s;
+  --transition-hover-in:  0.07s;
+}
+.button:hover {
+  /* transform: translateY(-1.5px); */
+  translate: 0 -1.5px;
+  transition: translate 0.07s;
+}
+/* .button:focus {
+  outline: solid 2px var(--cyanCircuitry);
+} */
+.button:focus-visible {
+  outline: solid 2px white;
 }
 
 
@@ -24,13 +40,18 @@
 }
 
 .secondary {
+  --bitDepthBlack: rgba(0, 0, 0, 0.76);
   background-color: rgba(0, 0, 0, 0.336);
   color: var(--text-lightest);
+  transition: background-color 0.5s, opacity 0.5s, translate 0.5s;
 }
 .secondary:disabled {
+  --bitDepthBlack: rgba(0, 0, 0, 0.442);
   background-color: rgba(0, 0, 0, 0.155);
   cursor: not-allowed;
   opacity: 0.9;
+  translate: 0;
+  transition: background-color 0.5s, opacity 0.5s;
 }
 .secondary:disabled > * {
   opacity: 0.8;
@@ -38,14 +59,16 @@
 
 .hovershow {
   background: transparent;
+  box-shadow: none;
 }
 .hovershow:hover {
   background: rgba(90, 90, 90, 0.336);
+  translate: 0px;
 }
 
 
 .icon {
-  padding: 7.5px;
+  padding: 7px;
   border-radius: 50%;
   display: flex;
   justify-content: center;

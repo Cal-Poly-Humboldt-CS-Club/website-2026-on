@@ -1,15 +1,20 @@
 .nav {
+    background: var(--digitalMoss-lighter);
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     justify-content: space-between;
     padding: 10px 20px;
-    color: var(--text-color);
+    color: var(--text-lightest);
 }
 .nav .links {
     display: flex;
+    align-items: center;
     flex-direction: row;
     gap: 20px;
+    gap: calc(10px + 3vw);
     list-style: none;
+    font-weight: 700;
+    font-size: 18px;
 }
 .nav .logo {
     width: 50px;
@@ -21,12 +26,11 @@
     border-radius: 50%;
     text-align: center;
     vertical-align: middle;
-    /* background: var(--terminalTeal); */
 }
 .nav .buttons {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 16px;
     align-items: center;
 }
 .nav .buttons > *:first-child {
