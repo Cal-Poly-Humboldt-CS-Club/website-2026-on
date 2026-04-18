@@ -44,7 +44,7 @@
 }
 .images > .third {
     position: relative;
-    z-index: -1;
+    /* z-index: -1; */
     transform: translate(-10px, -15px) rotate(2deg);
 }
 .images > .fourth {

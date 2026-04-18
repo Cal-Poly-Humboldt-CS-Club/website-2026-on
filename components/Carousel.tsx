@@ -51,14 +51,16 @@ export default function Carousel({images, classname}: CarouselProps) {
         <div className={`${styles.content} ${classname}`}>
             <div className={styles.images}>
                 {images.map((imageObj, index) => (
-                    <Image 
-                        width="800" 
-                        height="800" 
-                        src={imageObj.src} 
-                        alt={imageObj.alt} 
-                        key={index} 
-                        loading="eager"
-                    />
+                    <div className={styles.imageWrapper} key={index}>
+                        <Image
+                            src={imageObj.src}
+                            alt={imageObj.alt}
+                            fill
+                            sizes="100vw"
+                            style={{ objectFit: "contain" }}
+                            loading="eager"
+                        />
+                    </div>
                 ))}
             </div>
             <div className={styles.controls}>
