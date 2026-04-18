@@ -49,15 +49,15 @@ export default function Home() {
             The Computer Science Club at Cal Poly Humboldt is a vibrant community where students come together to explore technology, collaborate on projects, and share knowledge. Our mission is to foster an inclusive environment that encourages learning, creativity, and innovation. Whether you are a seasoned programmer or just starting out, there is a place for you here to grow, connect, and make lasting memories.
           </p>
           <FanCarousel images={[
-            { src: "/logo.png", alt: "todo" },
-            { src: "/logo2.png", alt: "todo" },
-            { src: "/logo3.png", alt: "todo" },
-            { src: "/logo.png", alt: "todo" },
-            { src: "/logo2.png", alt: "todo" },
-            { src: "/logo3.png", alt: "todo" },
-            { src: "/logo.png", alt: "todo" },
-            { src: "/logo2.png", alt: "todo" },
-            { src: "/logo3.png", alt: "todo" },
+            { src: "/homepage/1.jpg", alt: "todo" },
+            { src: "/homepage/2.jpg", alt: "todo" },
+            { src: "/homepage/3.jpg", alt: "todo" },
+            { src: "/homepage/4.jpg", alt: "todo" },
+            { src: "/homepage/5.jpg", alt: "todo" },
+            { src: "/homepage/6.jpg", alt: "todo" },
+            { src: "/homepage/7.jpg", alt: "todo" },
+            { src: "/homepage/8.jpg", alt: "todo" },
+            { src: "/homepage/9.jpg", alt: "todo" },
           ]}/>
       </div>
 

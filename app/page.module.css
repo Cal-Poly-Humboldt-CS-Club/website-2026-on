@@ -135,7 +135,7 @@ body {
   align-items: center;
   user-select: none;
   background: var(--background);  
-  margin-bottom: 120px;
+  padding-bottom: 120px;
 }
 .eventsSection > svg {
   margin-top: -400px;

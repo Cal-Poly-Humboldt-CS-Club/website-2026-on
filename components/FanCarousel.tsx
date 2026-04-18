@@ -9,44 +9,87 @@ interface FanCarouselProps {
 }
 
 function setActiveImage(offset: number) {
-    const imageContainer = document.querySelectorAll(`.${styles.images} > *`);
-    imageContainer.forEach((image, index) => {
-        console.log(index);
-        switch (index) {
-            case 0 + offset:
-                image.classList.add(styles.onDeckLeft);
-                image.classList.remove(styles.first);
-                image.classList.remove(styles.hidden);
-                break;
-            case 1 + offset:
-                image.classList.add(styles.first);
-                image.classList.remove(styles.second);
-                image.classList.remove(styles.onDeckLeft);
-                break;
-            case 2 + offset:
-                image.classList.add(styles.second);
-                image.classList.remove(styles.third);
-                image.classList.remove(styles.first);
-                break;
-            case 3 + offset:
-                image.classList.add(styles.third);
-                image.classList.remove(styles.fourth);
-                image.classList.remove(styles.second);
-                break;
-            case 4 + offset:
-                image.classList.add(styles.fourth);
-                image.classList.remove(styles.onDeckRight);
-                image.classList.remove(styles.third);
-                break;
-            case 5 + offset:
-                image.classList.add(styles.onDeckRight);
-                image.classList.remove(styles.hidden);
-                image.classList.remove(styles.fourth);
-                break;
-            default:
-                image.classList.add(styles.hidden);
-        }
-    });
+    const imageParent = document.querySelectorAll(`.${styles.images}`);
+    const imagesList = document.querySelectorAll(`.${styles.images} > *`);
+    if(imageParent[0].getBoundingClientRect().width < 830) {
+        // Do computation for 3 images
+        imagesList.forEach((image, index) => {
+            console.log(index);
+            switch (index) {
+                case 0 + offset:
+                    image.classList.add(styles.onDeckLeft);
+                    image.classList.remove(styles.first);
+                    image.classList.remove(styles.hidden);
+                    break;
+                case 1 + offset:
+                    image.classList.add(styles.first);
+                    image.classList.remove(styles.second);
+                    image.classList.remove(styles.onDeckLeft);
+                    break;
+                case 2 + offset:
+                    image.classList.add(styles.second);
+                    image.classList.remove(styles.third);
+                    image.classList.remove(styles.first);
+                    break;
+                case 3 + offset:
+                    image.classList.add(styles.third);
+                    image.classList.remove(styles.onDeckRight);
+                    image.classList.remove(styles.second);
+                    break;
+                case 4 + offset:
+                    image.classList.add(styles.onDeckRight);
+                    image.classList.remove(styles.hidden);
+                    image.classList.remove(styles.third);
+                    image.classList.remove(styles.fourth);
+                    break;
+                case 5 + offset:
+                    image.classList.add(styles.hidden);
+                    image.classList.remove(styles.fourth);
+                    break;
+                default:
+                    image.classList.add(styles.hidden);
+            }
+        });
+    }else {
+        // Do computation for 4 images
+        imagesList.forEach((image, index) => {
+            console.log(index);
+            switch (index) {
+                case 0 + offset:
+                    image.classList.add(styles.onDeckLeft);
+                    image.classList.remove(styles.first);
+                    image.classList.remove(styles.hidden);
+                    break;
+                case 1 + offset:
+                    image.classList.add(styles.first);
+                    image.classList.remove(styles.second);
+                    image.classList.remove(styles.onDeckLeft);
+                    break;
+                case 2 + offset:
+                    image.classList.add(styles.second);
+                    image.classList.remove(styles.third);
+                    image.classList.remove(styles.first);
+                    break;
+                case 3 + offset:
+                    image.classList.add(styles.third);
+                    image.classList.remove(styles.fourth);
+                    image.classList.remove(styles.second);
+                    break;
+                case 4 + offset:
+                    image.classList.add(styles.fourth);
+                    image.classList.remove(styles.onDeckRight);
+                    image.classList.remove(styles.third);
+                    break;
+                case 5 + offset:
+                    image.classList.add(styles.onDeckRight);
+                    image.classList.remove(styles.hidden);
+                    image.classList.remove(styles.fourth);
+                    break;
+                default:
+                    image.classList.add(styles.hidden);
+            }
+        });
+    }
 }
 
 export default function FanCarousel({images}: FanCarouselProps) {
@@ -65,6 +108,15 @@ export default function FanCarousel({images}: FanCarouselProps) {
 
     useEffect(() => {
         setActiveImage(currentIndex);
+    }, [currentIndex]);
+
+    // When the screen size changes, we need to reset the active image to ensure the correct classes are applied
+    useEffect(() => {
+        function handleResize() {
+            setActiveImage(currentIndex);
+        }
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
     }, [currentIndex]);
 
     return (

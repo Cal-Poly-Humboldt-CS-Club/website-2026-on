@@ -1,4 +1,5 @@
 .content {
+    width: 100%;
     max-width: 1000px;
 }
 .images {
@@ -8,11 +9,23 @@
     border-radius: 22px;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    animation: imagesShow 0.7s ease-out 1.2s forwards;
 }
+
+@keyframes imagesShow {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
 .images > *{
     width: 300px;
     height: 300px;
-    transition: width 1s ease, opacity 0.4s ease 0.3s, transform 1s ease;
+    transition: width 1s ease, opacity 0.4s ease 0.3s, transform 1s ease, scale 0.7s;
     background: grey;
     border-radius: 15px;
     box-shadow: black 0px 5px 10px;
@@ -55,4 +68,37 @@
     position: relative;
     transform: translate(-200px, 138px) rotate(19deg);
     opacity: 0;
+}
+
+
+.images > .first:hover,
+.images > .second:hover,
+.images > .third:hover,
+.images > .fourth:hover {
+    z-index: 10;
+    scale: 1.1;
+    transition: scale 0.3s;
+}
+
+@media (max-width: 830px) {
+    .images > .first {
+        position: relative;
+        transform: translate(60px, 35px) rotate(-12deg);
+    }
+    .images > .second {
+        position: relative;
+        transform: translate(0px, -25px) rotate(0deg);
+    }
+    .images > .third {
+        position: relative;
+        z-index: -1;
+        transform: translate(-60px, 35px) rotate(12deg);
+    }
+    
+    .images > .first:hover,
+    .images > .third:hover,
+    .images > .fourth:hover {
+        z-index: -1;
+        scale: 1;
+    }
 }

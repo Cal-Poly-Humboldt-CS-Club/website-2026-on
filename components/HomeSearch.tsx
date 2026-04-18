@@ -23,6 +23,11 @@ const HomeSearch: React.FC = () => {
         handleLoadMore,
     } = useEventSearch(5); // Limit to 5 results per page
 
+    // Automatically search for blank when component mounts to show initial events
+    React.useEffect(() => {
+        handleSearch('');
+    }, []);
+
     return (
         <>
             <div className={styles.nav}>
