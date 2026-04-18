@@ -5,10 +5,6 @@
   overflow: hidden;
 } */
 
-body {
-  background: var(--digitalMoss);
-}
-
 .landingSection {
   position: relative;
   display: grid;
@@ -34,6 +30,7 @@ body {
   transform: translateX(-50%);
   z-index: -1;
   justify-content: center;
+  background: var(--digitalMoss);
 }
 .landingBackground > div {
   background: var(--digitalMoss-lighter);
