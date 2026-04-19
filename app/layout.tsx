@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Almarai, Black_Han_Sans } from 'next/font/google';
 import "./globals.css";
 import Navbar from "../components/Navbar";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const almarai = Almarai({
+  subsets: ['latin'],
+  weight: ['300', '400', '700'],
+  display: 'swap',
+  variable: '--font-almarai',
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const blackHanSans = Black_Han_Sans({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-black-han-sans',
 });
 
 export const metadata: Metadata = {
@@ -25,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${almarai.variable} ${blackHanSans.variable}`}>
         <Navbar/>
         {children}
       </body>
