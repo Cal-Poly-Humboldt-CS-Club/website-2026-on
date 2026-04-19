@@ -10,6 +10,7 @@ interface ButtonProps {
   disabled?: boolean; // For disabled state
   onClick?: () => void;
   ariaLabel?: string; // Accessible label for icon-only buttons
+  className?: string; // Additional custom classes
 }
 
 const Button = ({
@@ -20,8 +21,9 @@ const Button = ({
   disabled = false,
   onClick,
   ariaLabel,
+  className = '',
 }: ButtonProps) => {
-  const buttonClass = `${styles.button} ${styles[variant]} ${isIcon ? styles.icon : ''}`.trim();
+  const buttonClass = `${styles.button} ${styles[variant]} ${isIcon ? styles.icon : ''}`.trim() + (className ? ` ${className}` : '');
 
   // If its a link
   if (href) {

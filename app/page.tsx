@@ -20,7 +20,6 @@ export default function Home() {
             height="819"
             loading="eager"
           />
-          <div className={styles.filler}></div>
         </div>
         <div className={styles.landingBody}>
           <h1>Computer Science Club Humboldt</h1>
