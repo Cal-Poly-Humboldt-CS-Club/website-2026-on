@@ -84,8 +84,8 @@ const Navbar: React.FC = () => {
               alt="discord"
             />
           </Button>
-          <Button className={style.contact} href="/contact">
-            Contact
+          <Button className={style.contact}>
+            <a href="mailto:csclub@humboldt.edu">Contact</a>
           </Button>
 
           {/* NOTE: This only shows in mobile screen widths */}
