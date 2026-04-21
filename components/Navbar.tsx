@@ -56,8 +56,8 @@ const Navbar: React.FC = () => {
         </Link>
       </li>
       <li>
-        <Link href="/sponsors" onClick={closeMenu} className="hover:text-gray-400">
-          Sponsors
+        <Link href="/about" onClick={closeMenu} className="hover:text-gray-400">
+          About Us
         </Link>
       </li>
     </ul>

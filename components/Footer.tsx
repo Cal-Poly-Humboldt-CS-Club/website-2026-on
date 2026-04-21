@@ -14,7 +14,7 @@ const Footer: React.FC = () => {
         <div className={styles.links}>
             <Link href="/join">Join</Link>
             <Link href="/events">Events</Link>
-            <Link href="/sponsors">Sponsors</Link>
+            <Link href="/about">About Us</Link>
         </div>
 
       </div>
