@@ -1,4 +1,5 @@
-import styles from "./join.module.css";
+import styles from "./page_join.module.css";
+import Button from "@/components/Button";
 
 export default function JoinPage() {
   return (
@@ -39,14 +40,9 @@ export default function JoinPage() {
           Join our Discord to stay updated, ask questions, and connect with other members.
         </p>
 
-        <a
-          className={styles.discordButton}
-          href="https://discord.gg/9PCcUwe6"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Button className={styles.discordButton} href="https://discord.gg/9PCcUwe6">
           Join Discord
-        </a>
+        </Button>
       </section>
     </div>
   );

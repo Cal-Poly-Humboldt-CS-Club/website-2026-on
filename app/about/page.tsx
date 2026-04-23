@@ -1,5 +1,4 @@
-import styles from "./about.module.css"; 
-import FanCarousel from "@/components/FanCarousel";
+import styles from "./page_about.module.css";
 import LeadershipCard from "@/components/LeadershipCard";
 
 export default function AboutPage() {
