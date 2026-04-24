@@ -12,7 +12,7 @@
   --cyanCircuitry: #42A4B2;
   --terminalTeal: #1D464E;
 
-  --text-light: #f4f4f4;
+  --text-light: #E9E9E9;
   --text-lightest: #ffffff;
 
   --text-dark: #434343;
@@ -86,9 +86,17 @@ button {
 
 h1,
 h2 {
+  letter-spacing: -1px;
+  color: var(--text-bold-color);
   font-family: var(--font-black-han-sans), sans-serif;
   font-weight: 400;
   font-style: normal;
+}
+
+p {
+  letter-spacing: .3px;
+  font-size: 1.2em;
+  line-height: 1.3em;
 }
 
 * {
