@@ -133,7 +133,7 @@ const Page = async ({ params }: { params: Params }) => {
           className={`${styles.markdown}`}
           remarkPlugins={[remarkGfm]}
           rehypePlugins={[rehypeHighlight]}
-          components={{ a: CustomLink, img: CustomImage }}
+          components={{ a: CustomLink, img: CustomImage as any }}
         >
           {event.body}
         </Markdown>
