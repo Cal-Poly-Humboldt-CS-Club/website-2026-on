@@ -26,7 +26,7 @@ const HomeSearch: React.FC = () => {
     // Automatically search for blank when component mounts to show initial events
     React.useEffect(() => {
         handleSearch('');
-    }, []);
+    }, [handleSearch]);
 
     return (
         <>

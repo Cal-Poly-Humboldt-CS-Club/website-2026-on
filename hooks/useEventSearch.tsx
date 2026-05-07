@@ -29,17 +29,17 @@ export function useEventSearch(pageResultLimit = 10) {
     }
   }, [pageResultLimit]);
 
-  const handleSearch = (query: string) => {
+  const handleSearch = useCallback((query: string) => {
     setSearchQuery(query);
     setCurrentPage(1);
     fetchEvents(query, 1);
-  };
+  }, [fetchEvents]);
 
-  const handleLoadMore = () => {
+  const handleLoadMore = useCallback(() => {
     const nextPage = currentPage + 1;
     setCurrentPage(nextPage);
     fetchEvents(searchQuery, nextPage);
-  };
+  }, [currentPage, fetchEvents, searchQuery]);
 
   return {
     searchQuery,
