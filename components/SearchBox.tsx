@@ -6,15 +6,16 @@ interface SearchBoxProps {
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onSearch: () => void;
+  className?: string;
 }
 
-const SearchBox: React.FC<SearchBoxProps> = ({ value, onChange, onSearch }) => {
+const SearchBox: React.FC<SearchBoxProps> = ({ value, onChange, onSearch, className }) => {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${className || ""}`}>
         <input
             type="text"
             placeholder="Search events..."
-            className={styles.input}
+            className={className || ""}
             value={value}
             onChange={onChange}
             onKeyDown={(e) => {

@@ -1,141 +1,163 @@
 'use client';
 
-import React, { useState, useEffect, useCallback } from 'react';
-import EventList from '../../components/events/EventList';
-import { EventCardData } from '../../lib/eventService';
+import React from 'react';
+import EventList from '@/components/events/EventList';
+import { useEventSearch } from '@/hooks/useEventSearch';
+// import { EventCardData } from '@/lib/eventService';
+import SearchBox from '@/components/SearchBox';
+import Button from '@/components/Button';
+import styles from "./page_events.module.css";
 
 const Page = () => {
-    const pageResultLimit = 2;
-    const [searchQuery, setSearchQuery] = useState('');
-    const [lastSearchQuery, setLastSearchQuery] = useState('');
-    const [isSearching, setIsSearching] = useState(false);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [events, setEvents] = useState<EventCardData[]>([]);
-    const [totalEvents, setTotalEvents] = useState(0);
-    const [initialFetchDone, setInitialFetchDone] = useState(false);
+    // const pageResultLimit = 2;
+    // const [searchQuery, setSearchQuery] = useState('');
+    // const [lastSearchQuery, setLastSearchQuery] = useState('');
+    // const [isSearching, setIsSearching] = useState(false);
+    // const [currentPage, setCurrentPage] = useState(1);
+    // const [events, setEvents] = useState<EventCardData[]>([]);
+    // const [totalEvents, setTotalEvents] = useState(0);
+    // const [initialFetchDone, setInitialFetchDone] = useState(false);
 
-    const addTemporaryEvents = useCallback((count: number) => {
-        const newEvents = Array.from({ length: count }, (_, i) => ({
-            id: `placeholder-${events.length + i + 1}`,
-            title: `Placeholder ${events.length + i + 1}`,
-            date: '',
-            description: '',
-            body: '',
-            placeholder: true,
-        }));
-        setEvents((prevEvents) => [...prevEvents, ...newEvents]);
-    }, [events.length]);
+    // const addTemporaryEvents = useCallback((count: number) => {
+    //     const newEvents = Array.from({ length: count }, (_, i) => ({
+    //         id: `placeholder-${events.length + i + 1}`,
+    //         title: `Placeholder ${events.length + i + 1}`,
+    //         date: '',
+    //         description: '',
+    //         body: '',
+    //         placeholder: true,
+    //     }));
+    //     setEvents((prevEvents) => [...prevEvents, ...newEvents]);
+    // }, [events.length]);
 
-    const removeTemporaryEvents = useCallback((count: number) => {
-        setEvents((prevEvents) => prevEvents.slice(0, prevEvents.length - count));
-    }, []);
+    // const removeTemporaryEvents = useCallback((count: number) => {
+    //     setEvents((prevEvents) => prevEvents.slice(0, prevEvents.length - count));
+    // }, []);
 
-    const fetchEvents = useCallback(async (page: number) => {
-        console.log('Fetching events with total events = ', totalEvents);
-        const totalPlaceholders = (totalEvents == 0) ? pageResultLimit : totalEvents - ((page - 1) * pageResultLimit);
-        addTemporaryEvents(totalPlaceholders);
-        // await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate slow network
-        const res = await fetch(`/api/events?page=${page}&limit=${pageResultLimit}`);
-        const data = await res.json();
-        removeTemporaryEvents(totalPlaceholders);
-        setEvents((prevEvents) => [...prevEvents, ...data.events]);
-        setTotalEvents(data.totalEvents);
-    }, [totalEvents, pageResultLimit, addTemporaryEvents, removeTemporaryEvents]);
+    // const fetchEvents = useCallback(async (page: number) => {
+    //     console.log('Fetching events with total events = ', totalEvents);
+    //     const totalPlaceholders = (totalEvents == 0) ? pageResultLimit : totalEvents - ((page - 1) * pageResultLimit);
+    //     addTemporaryEvents(totalPlaceholders);
+    //     // await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate slow network
+    //     const res = await fetch(`/api/events?page=${page}&limit=${pageResultLimit}`);
+    //     const data = await res.json();
+    //     removeTemporaryEvents(totalPlaceholders);
+    //     setEvents((prevEvents) => [...prevEvents, ...data.events]);
+    //     setTotalEvents(data.totalEvents);
+    // }, [totalEvents, pageResultLimit, addTemporaryEvents, removeTemporaryEvents]);
 
-    const handleSearch = async () => {
-        // Already searched for this query
-        if (searchQuery == lastSearchQuery) {
-            return;
-        }
+    // const handleSearch = async () => {
+    //     // Already searched for this query
+    //     if (searchQuery == lastSearchQuery) {
+    //         return;
+    //     }
 
-        // Update last search query
-        setLastSearchQuery(searchQuery);
+    //     // Update last search query
+    //     setLastSearchQuery(searchQuery);
 
-        // New empty search query, so reset the events list
-        if (searchQuery == '') {
-            setCurrentPage(1);
-            setIsSearching(false);
-            setEvents([]);
-            setTotalEvents(0);
-            fetchEvents(1);
-            return;
-        }
+    //     // New empty search query, so reset the events list
+    //     if (searchQuery == '') {
+    //         setCurrentPage(1);
+    //         setIsSearching(false);
+    //         setEvents([]);
+    //         setTotalEvents(0);
+    //         fetchEvents(1);
+    //         return;
+    //     }
 
-        // Make new list from a new search
-        setIsSearching(true);
-        setCurrentPage(1);
-        setEvents([]);
-        setTotalEvents(0);
-        addTemporaryEvents(pageResultLimit);
-        // await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate slow network
-        const res = await fetch(`/api/search?query=${searchQuery}&limit=${pageResultLimit}`);
-        const data = await res.json();
-        removeTemporaryEvents(pageResultLimit);
-        setEvents(data.events);
-        setTotalEvents(data.totalEvents);
-    };
+    //     // Make new list from a new search
+    //     setIsSearching(true);
+    //     setCurrentPage(1);
+    //     setEvents([]);
+    //     setTotalEvents(0);
+    //     addTemporaryEvents(pageResultLimit);
+    //     // await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate slow network
+    //     const res = await fetch(`/api/search?query=${searchQuery}&limit=${pageResultLimit}`);
+    //     const data = await res.json();
+    //     removeTemporaryEvents(pageResultLimit);
+    //     setEvents(data.events);
+    //     setTotalEvents(data.totalEvents);
+    // };
 
-    const handleClearSearch = () => {
-        // Clears, resets page, emptys list, and fetches regular events
-        setIsSearching(false);
-        setCurrentPage(1);
-        setSearchQuery('');
-        setEvents([]);
-        setTotalEvents(0);
-        fetchEvents(1);
-    };
+    // const handleClearSearch = () => {
+    //     // Clears, resets page, emptys list, and fetches regular events
+    //     setIsSearching(false);
+    //     setCurrentPage(1);
+    //     setSearchQuery('');
+    //     setEvents([]);
+    //     setTotalEvents(0);
+    //     fetchEvents(1);
+    // };
 
-    const handleLoadMore = async () => {
-        const nextPage = currentPage + 1;
+    // const handleLoadMore = async () => {
+    //     const nextPage = currentPage + 1;
 
-        // If we are searching, load more search results
-        if (isSearching) {
-            addTemporaryEvents(totalEvents - ((nextPage - 1) * pageResultLimit));
-            // await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate slow network
-            const res = await fetch(`/api/search?query=${searchQuery}&page=${nextPage}&limit=${pageResultLimit}`);
-            const data = await res.json();
-            removeTemporaryEvents(totalEvents - ((nextPage - 1) * pageResultLimit));
-            setEvents((prevEvents) => [...prevEvents, ...data.events]);
-            setTotalEvents(data.totalEvents);
+    //     // If we are searching, load more search results
+    //     if (isSearching) {
+    //         addTemporaryEvents(totalEvents - ((nextPage - 1) * pageResultLimit));
+    //         // await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate slow network
+    //         const res = await fetch(`/api/search?query=${searchQuery}&page=${nextPage}&limit=${pageResultLimit}`);
+    //         const data = await res.json();
+    //         removeTemporaryEvents(totalEvents - ((nextPage - 1) * pageResultLimit));
+    //         setEvents((prevEvents) => [...prevEvents, ...data.events]);
+    //         setTotalEvents(data.totalEvents);
 
-            return;
-        }
+    //         return;
+    //     }
 
-        // Else, we are not searching, so load more regular events
-        fetchEvents(nextPage);
-        setCurrentPage(nextPage);
-    };
+    //     // Else, we are not searching, so load more regular events
+    //     fetchEvents(nextPage);
+    //     setCurrentPage(nextPage);
+    // };
 
-    useEffect(() => {
-        if (!initialFetchDone) {
-            setEvents([]);
-            setTotalEvents(0);
-            fetchEvents(1);
-            setInitialFetchDone(true);
-        }
-    }, [fetchEvents, initialFetchDone]);
+    // useEffect(() => {
+    //     if (!initialFetchDone) {
+    //         setEvents([]);
+    //         setTotalEvents(0);
+    //         fetchEvents(1);
+    //         setInitialFetchDone(true);
+    //     }
+    // }, [fetchEvents, initialFetchDone]);
+
+    const {
+        searchQuery,
+        setSearchQuery,
+        events,
+        totalEvents,
+        isLoading,
+        handleSearch,
+        handleLoadMore,
+    } = useEventSearch(3); // Limit to 4 results per page
+
+    // Automatically search for blank when component mounts to show initial events
+    React.useEffect(() => {
+        handleSearch('');
+    }, [handleSearch]);
 
     return (
-        <div>
-            <nav>
-                <ul>
-                    <li>
-                        <input
-                            type="text"
-                            placeholder="Search Events"
-                            value={searchQuery}
-                            onChange={(e) => setSearchQuery(e.target.value)}
-                        />
-                        <button onClick={handleSearch}>Search</button>
-                        <button onClick={handleClearSearch}>Reset</button>
-                    </li>
-                </ul>
-            </nav>
-            <EventList events={events} />
+        <>
+            <div className={styles.title}>
+                <h1>Events</h1>
+                <p>We do regular events such as skill workshops, talks from industry leaders, hackathons, movie nights, and so much more!</p>
+            </div>
+            <SearchBox 
+                className={styles.searchBox}
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                onSearch={() => handleSearch(searchQuery)}/>
+
+            <EventList
+                className={styles.eventList}
+                events={events}/>
+
             {events.length < totalEvents && (
-                <button onClick={handleLoadMore}>Load More</button>
+                <Button
+                    className={styles.loadMore}
+                    onClick={handleLoadMore}>
+                    Load More
+                </Button>
             )}
-        </div>
+        </>
     );
 };
 

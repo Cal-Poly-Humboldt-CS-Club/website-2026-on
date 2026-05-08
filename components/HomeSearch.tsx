@@ -21,7 +21,7 @@ const HomeSearch: React.FC = () => {
         isLoading,
         handleSearch,
         handleLoadMore,
-    } = useEventSearch(5); // Limit to 5 results per page
+    } = useEventSearch(4); // Limit to 4 results per page
 
     // Automatically search for blank when component mounts to show initial events
     React.useEffect(() => {
@@ -36,10 +36,9 @@ const HomeSearch: React.FC = () => {
                     onChange={(e) => setSearchQuery(e.target.value)}
                     onSearch={() => handleSearch(searchQuery)}/>
 
-                <Button>
+                <Button href='/events'>
                 Find more events
                 </Button>
-
             </div>
 
             <EventList events={events} />

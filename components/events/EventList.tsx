@@ -7,12 +7,13 @@ import style from './EventList.module.css';
 
 interface EventListProps {
     events: EventCardData[];
+    className?: string;
 }
 
-const EventList: React.FC<EventListProps> = ({ events }) => {
+const EventList: React.FC<EventListProps> = ({ events, className }) => {
     return (
         <>
-        <div className={style.container}>
+        <div className={`${style.container} ${className}`}>
             {events.length === 0 && <p>No events found</p>}
             {events.map((event) => (
                 <EventCard
