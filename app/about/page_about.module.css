@@ -1,5 +1,39 @@
 .bodyContent {
+  position: relative;
   padding: 2em;
+  overflow: hidden;
+}
+
+.topBackground {
+  position: absolute;
+  width: 100%;
+  height: 900px;
+  top: -180px;
+  left: 0;
+  right: 0;
+  /* display: flex;
+  justify-content: center; */
+  background: var(--digitalMoss);
+  z-index: -1;
+}
+.topBackground img {
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.topBackground svg {
+  position: absolute;
+  top: 900px;
+  display: block;
+  height: 400px;
+  width: 100%;
+  fill: var(--digitalMoss);
+  transform: scaleY(-1);
+  /* position: absolute;
+  width: 100%;
+  top: -180px;
+  left: 50%;
+  transform: translateX(-50%);
+  justify-content: center; */
 }
 
 .titleContent {

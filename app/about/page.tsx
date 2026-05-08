@@ -7,6 +7,19 @@ import Button from "@/components/Button";
 export default function AboutPage() {
   return (
     <div className={styles.bodyContent}>
+      <div className={styles.topBackground}>
+        <Image
+          src="/background3.svg"
+          alt="slection of icons"
+          width="3517"
+          height="750"
+          loading="eager"
+        />
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" aria-hidden="true" preserveAspectRatio="none">
+          <path fillOpacity="1" d="M0,262 Q 720,204 1440,262 L1440,320 L0,320 Z"></path>
+        </svg>
+      </div>
+
       <div className={styles.titleContent}>
         <h1>About the Club</h1>
         <p>Making a supportive and welcoming comunity for Humboldt CS students, which complements what we get in classes and connects people to industry!</p>
