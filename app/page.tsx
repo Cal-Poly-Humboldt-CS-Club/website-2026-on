@@ -31,9 +31,9 @@ export default function Home() {
         <Carousel
           classname={styles.carousel}
           images={[
-            { src: "/Merch.png", alt: "todo" },
-            { src: "/logo2.png", alt: "todo" },
-            { src: "/logo3.png", alt: "todo" },
+            { src: "/homepage/Merch_banner.png", alt: "todo" },
+            { src: "/homepage/ICPC_banner.png", alt: "todo" },
+            { src: "/homepage/Hackathon2026_banner.png", alt: "todo" },
           ]}
         />
       </div>

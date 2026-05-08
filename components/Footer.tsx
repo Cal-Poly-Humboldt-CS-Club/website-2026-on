@@ -1,6 +1,7 @@
 // FOOTER.TSX
-// ENRIQUE LOPEZ
-// LAST MOD: 4/20/26
+// Authors: Enrique Lopez, Andrew Gallimore
+// Last Modified: 5/7/26
+
 import React from "react";
 import styles from "./Footer.module.css";
 import Link from 'next/link';

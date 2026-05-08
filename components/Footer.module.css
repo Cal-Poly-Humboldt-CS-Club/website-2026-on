@@ -1,8 +1,12 @@
+/* 
+  Authors: Enrique Lopez, Andrew Gallimore
+  Last Modified: 5/7/26
+*/
+
 .footer {
   background: #111;
   color: #fff;
   padding: 3rem 1.5rem;
-  margin-top: 4rem;
 }
 
 .content {
