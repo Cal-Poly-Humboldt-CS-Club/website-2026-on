@@ -153,9 +153,18 @@
     font-size: 2.2rem;
     margin-bottom: 16px;
 }
+.markdown h2 {
+    font-size: 1.8rem;
+    margin-top: 38px;
+    margin-bottom: 12px;
+}
+
 .markdown p {
-    margin-bottom: 16px;
     line-height: 1.75rem;
+    margin-bottom: 16px;
+}
+.markdown li {
+    line-height: 1.60em;
 }
 
 /* Links */
@@ -233,11 +242,13 @@
 }
 
 /* Lists */
-.markdown ul {
+.markdown ul,
+.markdown ol {
     padding-left: 24px;
     margin-bottom: 32px;
 }
-.markdown ul li {
+.markdown ul li,
+.markdown ol li {
     margin-bottom: 8px;
 }
 

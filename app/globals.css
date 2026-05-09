@@ -32,7 +32,7 @@
   /* Light-mode here */
   --background: var(--pixelPureWhite);
 
-  --panel-bg: var(--pixelPureWhite-10);
+  --panel-bg: var(--pixelPureWhite);
   --panel-bg-tinted: var(--pixelPureWhite-tint);
   --panel-bg-tinted-darker: var(--pixelPureWhite-tint-darker);
 
@@ -93,10 +93,11 @@ h2 {
   font-style: normal;
 }
 
-p {
+p,
+li {
   letter-spacing: .3px;
-  font-size: 1.2em;
-  line-height: 1.3em;
+  font-size: 1.2rem;
+  line-height: 1.3rem;
 }
 
 * {

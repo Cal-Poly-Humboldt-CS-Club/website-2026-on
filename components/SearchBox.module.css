@@ -18,15 +18,32 @@
     font-size: 1.2rem;
     letter-spacing: 0.3px;
     box-shadow: 0px 3.5px var(--bitDepthBlack);
+    color: var(--text-lightest);
 }
+.container input::placeholder {
+    color: var(--text-lightest);
+    opacity: 0.8;
+}
+
+.container input:autofill,
+.container input:autofill:hover, 
+.container input:autofill:focus, 
+.container input:autofill:active {
+    box-shadow: 0 0 0 1000px var(--input-bg) inset, 0px 3.5px var(--bitDepthBlack) !important;
+    -webkit-text-fill-color: var(--text-lightest) !important;
+}
+
 .container input:focus {
     outline: solid 2px var(--cyanCircuitry);
 }
 .container > button {
     position: absolute;
-    right: 0;
+    right: 2px;
     top: 50%;
     transform: translateY(-50%);
+    height: 36px;
+    width: 50px;
+    border-radius: 18px;
 }
 .container > button img {
     filter: invert(1) !important;

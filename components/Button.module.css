@@ -64,7 +64,10 @@
   box-shadow: none;
 }
 .hovershow:hover {
-  background: rgba(90, 90, 90, 0.336);
+  /* background: rgba(90, 90, 90, 0.336); */
+  /* background: var(--digitalMoss-lighter); */
+  /* background: var(--yarnYellow); */
+  background: rgba(151, 211, 157, 0.336);
   translate: 0px;
 }
 

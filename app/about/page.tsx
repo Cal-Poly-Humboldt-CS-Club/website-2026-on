@@ -67,7 +67,7 @@ export default function AboutPage() {
         </section>
       </div>
 
-      <section className={styles.titleContent}>
+      <section className={styles.centeredTitle}>
         <h2>Leadership</h2>
         <p>
           Meet the team that keeps the machine going. 

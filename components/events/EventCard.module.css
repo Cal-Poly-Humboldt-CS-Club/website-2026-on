@@ -54,6 +54,7 @@
     margin: 0;
     margin-bottom: 1.1rem;
     color: var(--text-color-bold);
+    letter-spacing: 0.1px;
 
     display: flex;
     align-items: center;
