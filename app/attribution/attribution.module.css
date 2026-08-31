@@ -7,7 +7,7 @@
 .topBackground {
   position: absolute;
   width: 100%;
-  height: 520px;
+  height: 450px;
   top: -180px;
   left: 0;
   right: 0;
@@ -24,7 +24,7 @@
 }
 .topBackground svg {
   position: absolute;
-  top: 536px;
+  top: 466px;
   display: block;
   height: 400px;
   width: 100%;
@@ -39,31 +39,58 @@
 }
 .topBackground svg:last-of-type {
     fill: var(--digitalMoss);
-    top: 520px;
+    top: 450px;
 }
 
 .titleContent {
   max-width: 760px;
   margin: 0 auto;
-  padding-top: 3.5rem;
+  /* padding-top: 3.5rem; */
   padding-bottom: 2rem;
   text-align: center;
 }
 
-.titleContent h1 {
-  font-size: clamp(2.75rem, 4vw, 4.5rem);
-  margin-bottom: 0.75rem;
-  color: var(--text-lightest);
+.titleContent img {
+    /* margin-top: 3rem; */
+    max-width: 80%;
+    height: auto;
 }
-.titleContent p {
+
+.subTitleContent {
+    max-width: 760px;
+    margin: 0 auto;
+    /* padding-top: 3.5rem; */
+    margin-top: -2.5px;
+    padding-bottom: 2rem;
+    text-align: center;
+}
+.subTitleContent .pill {
+    display: flex;
+    align-items: center;
+
+    height: 2.6rem;
+    border-radius: 1.3rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: fit-content;
+    background-color: var(--yarnYellow);
+    color: var(--text-darkest);
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+}
+.subTitleContent h1 {
+  /* font-size: clamp(2.75rem, 4vw, 4.5rem); */
+  font-size: 55px;
+  margin-top: 40px;
+  margin-bottom: 0.75rem;
+  color: var(--text-bold-color);
+}
+.subTitleContent p {
   max-width: 740px;
   margin: 0 auto;
-  color: var(--text-light);
-}
-.titleContent img {
-  margin-top: 3rem;
-  max-width: 80%;
-  height: auto;
+  color: var(--text-color);
 }
 
 .contentSection {

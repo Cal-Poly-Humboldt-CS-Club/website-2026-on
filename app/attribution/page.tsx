@@ -7,10 +7,10 @@ export default function AttributionPage() {
     <div className={styles.bodyContent}>
       <div className={styles.topBackground}>
         <Image
-          src="/background3.svg"
+          src="/background4.svg"
           alt="selection of icons"
           width="3517"
-          height="750"
+          height="573"
           loading="eager"
         />
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" aria-hidden="true" preserveAspectRatio="none">
@@ -22,16 +22,20 @@ export default function AttributionPage() {
       </div>
 
       <div className={styles.titleContent}>
-        <h1>Attributions</h1>
-        <p>
-          This website is built for Computer Science Club Humboldt. It is maintained by the club and updated as leadership changes each year.
-        </p>
         <Image
           src="/logo.png"
           alt="CS Club Humboldt Icon"
-          width="400"
-          height="400"
+          width="300"
+          height="300"
         />
+      </div>
+
+      <div className={styles.subTitleContent}>
+        <p className={styles.pill}>Attributions</p>
+        <h1>Important Attributions</h1>
+        <p>
+          This website is built for Computer Science Club Humboldt. It is maintained by the club and updated as leadership changes each year.
+        </p>
       </div>
 
       <div className={styles.contentSection}>
