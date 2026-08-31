@@ -10,7 +10,7 @@ export default function AboutPage() {
       <div className={styles.topBackground}>
         <Image
           src="/background3.svg"
-          alt="slection of icons"
+          alt="selection of icons"
           width="3517"
           height="750"
           loading="eager"
