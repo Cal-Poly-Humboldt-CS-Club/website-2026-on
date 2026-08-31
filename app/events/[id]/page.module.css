@@ -108,6 +108,7 @@
     .row {
         margin-left: 16px;
         grid-template-columns: calc(100% - 16px);
+        margin-top: 22px;
     }
     .columnSide, .columnCenter {
         grid-column: 1;
@@ -143,7 +144,7 @@
 .row p {
     font-size: 1.1rem;
     margin-bottom: 16px;
-    letter-spacing: 0.01em;
+    letter-spacing: 0.02em;
 }
 
 .markdown {
@@ -151,20 +152,26 @@
 }
 .markdown h1 {
     font-size: 2.2rem;
-    margin-bottom: 16px;
+    margin-top: 46px;
+    margin-bottom: 12px;
 }
 .markdown h2 {
     font-size: 1.8rem;
-    margin-top: 38px;
+    margin-top: 46px;
     margin-bottom: 12px;
 }
 
 .markdown p {
     line-height: 1.75rem;
-    margin-bottom: 16px;
+    margin-top: 5px;
+    margin-bottom: 11px;
 }
 .markdown li {
+    padding-left: 4px;
     line-height: 1.60em;
+}
+.markdown li::marker {
+    font-weight: 800;
 }
 
 /* Links */
@@ -244,8 +251,13 @@
 /* Lists */
 .markdown ul,
 .markdown ol {
-    padding-left: 24px;
+    padding-left: 32px;
+    margin-top: 16px;
     margin-bottom: 32px;
+}
+.markdown li > ul,
+.markdown li > ol {
+    margin-top: 8px;
 }
 .markdown ul li,
 .markdown ol li {

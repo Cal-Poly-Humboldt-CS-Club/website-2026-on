@@ -32,9 +32,10 @@
   /* Light-mode here */
   --background: var(--pixelPureWhite);
 
-  --panel-bg: var(--pixelPureWhite);
+  --panel-bg: rgb(218, 224, 217);
   --panel-bg-tinted: var(--pixelPureWhite-tint);
   --panel-bg-tinted-darker: var(--pixelPureWhite-tint-darker);
+  --panel-box-shadow: 0px 2px 3px #000000a3;
 
   --text-color: var(--text-dark);
   --text-bold-color: var(--text-darkest);
@@ -56,6 +57,7 @@
     --panel-bg: var(--bitDepthBlack-10);
     --panel-bg-tinted: var(--bitDepthBlack-tint);
     --panel-bg-tinted-darker: var(--bitDepthBlack-tint-lighter);
+    --panel-box-shadow: 0 2px 8px #0000001a;
 
     --link-color: var(--digitalMoss-lighter);
     --link-visited-color: var(--neuralNook-lighter);
@@ -85,7 +87,8 @@ button {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   letter-spacing: -1px;
   color: var(--text-bold-color);
   font-family: var(--font-black-han-sans), sans-serif;

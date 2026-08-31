@@ -5,7 +5,7 @@
 
 .footer {
   background: #111;
-  color: #fff;
+  background: var(--panel-bg);
   padding: 3rem 1.5rem;
 }
 
@@ -16,13 +16,49 @@
 }
 
 .footer h3 {
-  margin-bottom: 0.5rem;
+  color: var(--text-bold-color);
+  font-size: 2rem;
+  margin-bottom: 0rem;
+}
+.citation {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
 }
 
-.footer p {
+/* .footer p {
   margin: 0.5rem 0;
   color: #ccc;
+} */
+
+/* Links */
+.citation a {
+    /* color: #1499A9; */
+    color: var(--link-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--link-color);
+    padding-left: 1px;
+    padding-right: 1px;
+    margin-left: -1px;
+    margin-right: -1px;
 }
+.citation a:visited {
+    color: var(--link-visited-color);
+    border-bottom: 1px solid var(--link-visited-color);
+}
+.citation a svg {
+    width: 1em;
+    height: 1em;
+    margin-left: 0.25em;
+    margin-bottom: -0.15em;
+
+    /* fill: #0070f3; */
+    fill: var(--link-color);
+}
+.citation a:visited svg {
+    fill: var(--link-visited-color);
+}
+
 
 .links {
   display: flex;
@@ -32,7 +68,7 @@
 }
 
 .links a {
-  color: #fff;
+  color: var(--text-bold-color);
   text-decoration: none;
   font-weight: 500;
 }

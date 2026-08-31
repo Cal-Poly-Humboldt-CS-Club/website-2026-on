@@ -139,24 +139,6 @@ const Page = async ({ params }: { params: Params }) => {
         </Markdown>
       </div>
     </div>
-
-    <div className="row">
-      <div className="columnCenter">
-        <h2>Attribution</h2>
-        <p>Icons by <a target="_blank" href="https://icons8.com">Icons8</a></p>
-        <ul>
-          <li>
-            <a target="_blank" href="https://icons8.com/icon/83147/clock">Clock icon</a>
-          </li>
-          <li>
-            <a target="_blank" href="https://icons8.com/icon/85102/calendar">Calendar icon</a>
-          </li>
-          <li>
-            <a target="_blank" href="https://icons8.com/icon/85149/location">Marker icon</a>
-          </li>
-        </ul>
-      </div>
-    </div>
   </div>
   // return <EventPage event={event} />;
 };
