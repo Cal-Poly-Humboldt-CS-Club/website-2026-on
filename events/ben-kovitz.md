@@ -6,6 +6,7 @@ time: '5-6:30 pm'
 location: 'bss 162'
 description: 'Hear from Ben Kovitz about his experiences in Industry, his perspectives on inustry trends, and how to prepare for future jobs!'
 thumbnail: '/event-files/ben-industry/ben_1.jpg'
+unlisted: true
 tags:
     - 'talk'
     - 'industry'

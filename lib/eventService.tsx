@@ -4,6 +4,7 @@ import matter from 'gray-matter';
 
 export interface EventData {
   id: string;
+  unlisted: boolean;
   title: string;
   date: string;
   time: string;
@@ -15,6 +16,7 @@ export interface EventData {
 }
 export interface EventCardData {
   id: string;
+  unlisted: boolean;
   title: string;
   date: string;
   description: string;
@@ -30,8 +32,8 @@ const generateEventId = (title: string): string => {
 };
 
 export const transformToEventCardData = (event: EventData): EventCardData => {
-  const { id, title, date, description, thumbnail } = event;
-  return { id, title, date, description, thumbnail };
+  const { id, unlisted, title, date, description, thumbnail } = event;
+  return { id, unlisted, title, date, description, thumbnail };
 };
 
 const readEventFiles = (): EventData[] => {
@@ -56,6 +58,7 @@ const readEventFiles = (): EventData[] => {
 
       // Create the event object
       const id = data.id || generateEventId(data.title || filename);
+      const unlisted = data.unlisted ?? false;
       const title = data.title || '';
       const date = data.date || '';
       const time = data.time || '';
@@ -64,7 +67,7 @@ const readEventFiles = (): EventData[] => {
       const thumbnail = data.thumbnail || undefined;
       const tags = data.tags || [];
 
-      return { id, title, date, time, location, description, thumbnail, tags, body: content } as EventData;
+      return { id, unlisted, title, date, time, location, description, thumbnail, tags, body: content } as EventData;
     }).filter(event => event !== null) as EventData[];
 
     cachedEvents = events;
@@ -106,7 +109,10 @@ export const getEvents = (query: string = '', page: number = 1, limit: number = 
   console.log('All events:', eventsForDebug);
 
   // Filtering events by query
-  const filteredEvents = filterEventsByQuery(events, query);
+  var filteredEvents = filterEventsByQuery(events, query);
+
+  // Filterint out unlisted events
+  filteredEvents = filteredEvents.filter(event => !event.unlisted);
 
   // Changing event format to EventCardData
   const eventCards = filteredEvents.map(transformToEventCardData);
@@ -120,7 +126,10 @@ export const searchEvents = (query: string): EventCardData[] => {
   const events = readEventFiles();
 
   // Filtering events by query and sorting by relevance
-  const filteredEvents = filterEventsByQuery(events, query);
+  var filteredEvents = filterEventsByQuery(events, query);
+
+  // Filterint out unlisted events
+  filteredEvents = filteredEvents.filter(event => !event.unlisted);
 
   // Implement sorting logic based on relevance
   const stortedEvents =  sortEventsByRelevance(filteredEvents, query);
