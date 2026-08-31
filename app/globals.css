@@ -35,7 +35,7 @@
   --panel-bg: rgb(218, 224, 217);
   --panel-bg-tinted: var(--pixelPureWhite-tint);
   --panel-bg-tinted-darker: var(--pixelPureWhite-tint-darker);
-  --panel-box-shadow: 0px 2px 3px #000000a3;
+  --panel-box-shadow: none;
 
   --text-color: var(--text-dark);
   --text-bold-color: var(--text-darkest);
