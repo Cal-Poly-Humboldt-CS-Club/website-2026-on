@@ -1,19 +1,57 @@
 /* Importing Orbitron Font */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 
+/* Route-scoped navbar overrides for the Hackathon page */
+:global(body:has(.hackathon2025-page) nav[aria-label="Primary site navigation"]) {
+    background: #98cdea;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+}
+
+@media (min-width: 671px) {
+    :global(body:has(.hackathon2025-page) nav[aria-label="Primary site navigation"] > ul) {
+        gap: calc(10px + 2vw);
+    }
+    :global(body:has(.hackathon2025-page) nav[aria-label="Primary site navigation"] > ul a) {
+        font-family: "Orbitron", serif;
+        color: var(--text-darkest) !important;
+        font-size: 0.9em;
+    }
+
+    :global(body:has(.hackathon2025-page) nav[aria-label="Primary site navigation"] > ul a:hover) {
+        color: var(--text-darkest) !important;
+    }
+}
+:global(body:has(.hackathon2025-page)) {
+    background-color: #242123 !important;
+}
+
+:global(body:has(.hackathon2025-page) #mobile-menu) {
+    background: #292c31;
+}
+
+:global(body:has(.hackathon2025-page) #mobile-menu h1) {
+    font-family: "Orbitron", serif;
+}
+
 .hackathonContent {
-    background-color: #3f8ad5 !important;
+    /* background-color: #3f8ad5 !important;
     background-color: #577ca0 !important;
-    background-color: #171b1b !important;
+    background-color: #171b1b !important; */
     background-color: #242123 !important;
     /* background-color: #98cdea !important; */
-    overflow-y: scroll;
     padding-left: 2em;
     padding-right: 2em;
     padding-top: 2em;
     max-width: 1700px;
     margin-left: auto;
     margin-right: auto;
+}
+.hackathonContent h1,
+.hackathonContent h2 {
+    color: var(--text-lightest)
+}
+.hackathonContent p {
+    color: var(--text-light)
 }
 
 .hackathonPage {
@@ -54,7 +92,7 @@
 
 /* Hack cards, used throughout the page */
 .hackCard {
-    background: #231f20;
+    /* background: #231f20; */
     background: #292c31;
     overflow: hidden;
     padding: 20px;
@@ -168,7 +206,7 @@
     max-width: 1100px;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
 }
-@media (max-width: 749px) {
+@media (max-width: 855px) {
     .hackSignups .imageGrid img {
         max-width: 100%;
     }
@@ -267,9 +305,11 @@
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
+    line-height: 1em;
 }
 .hackPeople h3 {
-    margin-top: 0px;
+    font-family: var(--font-almarai), Arial, Helvetica, sans-serif;
+    /* margin-top: 11px; */
     font-size: 1.1em;
     font-weight: 700;
     margin-bottom: 16px;
@@ -325,7 +365,7 @@
         width: calc(100% - 16px);
     } */
 }
-@media (max-width: 745px) {
+@media (max-width: 800px) {
     .hackHalf {
         width: 100%;
     }

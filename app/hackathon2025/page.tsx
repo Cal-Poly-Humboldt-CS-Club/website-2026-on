@@ -4,7 +4,7 @@ import Button from "@/components/Button";
 
 export default function AboutPage() {
   return (
-    <div className={styles.hackathonPage}>
+    <div className={`${styles.hackathonPage} hackathon2025-page`}>
       <div className={`w3-row-padding ${styles.hackathonContent}`} id="postbody">
         <div className={`${styles.hackBanner} ${styles.fullWidth}`}>
           <img src="hackathon2025/banner.png" alt="Hackathon For Social Good 2025" />
