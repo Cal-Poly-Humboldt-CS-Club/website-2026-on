@@ -53,16 +53,23 @@ export default function AboutPage() {
         <section className={styles.section}>
           <h2>Our Mission</h2>
           <p>
-            We aim to build a welcoming community where students explore
-            technology, collaborate on projects, and grow together.
+            We aim to build a welcoming and collaborative community where students can explore technology, learn new skills, and grow together. Through workshops, projects, competitions, social events, and connections with professionals, we create opportunities for students to learn beyond the classroom and discover where their interests can take them.
+          </p>
+          <p>
+            The club is open to students of all backgrounds and majors. Whether you're an experienced programmer or just curious about technology, our goal is to provide a place to meet others, build things together, and use technology to make a positive impact on campus and in the wider Humboldt community.
           </p>
         </section>
 
         <section className={styles.section}>
           <h2>Club History</h2>
           <p>
-            {/* More details here i guess */}
-            Founded at Cal Poly Humboldt, our club has grown into...
+            Founded at Cal Poly Humboldt, the Computer Science Club has grown into a community of students brought together by a shared interest in technology, creativity, and problem-solving.
+          </p>
+          <p>
+            Over the years, the club has expanded beyond regular meetings to host technical workshops, programming competitions, career and industry events, collaborative projects, and social activities. The club also helps organize the Hackathon for Social Good, where students from different disciplines work together to build technology for local nonprofit organizations.
+          </p>
+          <p>
+            As the club continues to grow, its focus remains the same: creating opportunities for students to connect, learn from one another, take on new challenges, and turn their ideas into something meaningful.
           </p>
         </section>
       </div>
@@ -70,34 +77,40 @@ export default function AboutPage() {
       <section className={styles.centeredTitle}>
         <h2>Leadership</h2>
         <p>
-          Meet the team that keeps the machine going. 
+          Meet the team that keeps the machine going!
         </p>
       </section>
 
       <div className={styles.leadershipGrid}>
           <LeadershipCard
-            name="John Doe"
+            name="Enrique Lopez"
             role="President"
-            image="/headshots/john.jpg"
-            email="jon@humboldt.edu"
+            image="/headshots/example1.jpg"
+            email="el259@humboldt.edu"
           />
           <LeadershipCard
-            name="Jake Statefarm"
+            name="Nate Weinstein"
+            role="Treasurer"
+            image="/headshots/example1.jpg"
+            email="nw120@humboldt.edu"
+          />
+          <LeadershipCard
+            name="Skyler Hunsinger"
             role="Vice President"
-            image="/headshots/jake.jpg"
-            email="jak@humboldt.edu"
+            image="/headshots/example2.jpg"
+            email="sh2824@humboldt.edu"
           />
           <LeadershipCard
-            name="Adam Madam"
+            name="Tyler James"
             role="Vice President"
-            image="/headshots/adam.jpg"
-            email="dam@humboldt.edu"
+            image="/headshots/example3.jpg"
+            email="tmj32@humboldt.edu"
           />
           <LeadershipCard
-            name="Jorge"
-            role="Secretary"
-            image="/headshots/jorge.jpg"
-            email="jog@humboldt.edu"
+            name="Andrew Gallimore"
+            role="Website Manager"
+            image="/headshots/example4.jpg"
+            email="aeg108@humboldt.edu"
           />
       </div>
 
