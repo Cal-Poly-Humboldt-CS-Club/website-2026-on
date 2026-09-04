@@ -18,10 +18,11 @@ const HomeSearch: React.FC = () => {
         searchQuery,
         setSearchQuery,
         events,
+        totalEvents,
         isLoading,
         handleSearch,
         handleLoadMore,
-    } = useEventSearch(4); // Limit to 4 results per page
+    } = useEventSearch(1); // Limit to 4 results per page
 
     // Automatically search for blank when component mounts to show initial events
     React.useEffect(() => {
@@ -42,9 +43,16 @@ const HomeSearch: React.FC = () => {
             </div>
 
             <EventList events={events} />
-            {isLoading && <p>Loading...</p>}
-            {events.length > 0 && (
-                <Button onClick={handleLoadMore}>Load More</Button>
+            
+            {events.length < totalEvents && (
+                <Button
+                    onClick={handleLoadMore}
+                    disabled={isLoading}
+                    className={isLoading ? styles.loadingButton : ''}
+                >
+                    {isLoading && <span className={styles.loader}></span>}
+                    Load More
+                </Button>
             )}
         </>
     );

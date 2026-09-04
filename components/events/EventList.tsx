@@ -18,6 +18,7 @@ const EventList: React.FC<EventListProps> = ({ events, className }) => {
             {events.map((event) => (
                 <EventCard
                     id={event.id}
+                    unlisted={event.unlisted}
                     key={event.id}
                     title={event.title}
                     date={event.date}

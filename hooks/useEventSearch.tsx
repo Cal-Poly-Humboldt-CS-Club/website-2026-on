@@ -10,6 +10,10 @@ export function useEventSearch(pageResultLimit = 10) {
 
   const fetchEvents = useCallback(async (query: string, page: number) => {
     setIsLoading(true);
+
+    // Temporary delay for testing
+    await new Promise((resolve) => setTimeout(resolve, 1000)); // 1 second delay for testing
+    
     try {
       const endpoint = query
         ? `/api/search?query=${query}&page=${page}&limit=${pageResultLimit}`
