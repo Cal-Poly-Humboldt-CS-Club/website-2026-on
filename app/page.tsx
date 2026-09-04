@@ -5,7 +5,7 @@ import Image from "next/image";
 import Button from "../components/Button";
 import Carousel from "../components/Carousel"
 import FanCarousel from "../components/FanCarousel"
-import HomeSearch from "@/components/HomeSearch";
+import SearchSection from "@/components/SearchSection";
 
 export default function Home() {
   return (
@@ -87,7 +87,7 @@ export default function Home() {
             <path fillOpacity="1" d="M0,262 Q 720,204 1440,262 L1440,320 L0,320 Z"></path>
           </svg>
           <h2>Our Events</h2>
-          <HomeSearch/>
+          <SearchSection numberOfResults={4} />
       </div>
     </>
   );

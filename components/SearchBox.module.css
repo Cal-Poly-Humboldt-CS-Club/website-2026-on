@@ -48,3 +48,65 @@
 .container > button img {
     filter: invert(1) !important;
 }
+
+.loading-button {
+    position: relative;
+    color: transparent;
+}
+
+.loader-spinner {
+    --color-1: #fff;
+    --color-2: var(--yarnYellow);
+    --size: 0.38px;
+
+    filter: invert(0) !important;
+
+    width: calc(48 * var(--size));
+    height: calc(48 * var(--size));
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    color: var(--color-1);
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+.loader-spinner::after,
+.loader-spinner::before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    width: calc(24 * var(--size));
+    height: calc(24 * var(--size));
+    top: 0;
+    background-color: var(--color-1);
+    border-radius: 50%;
+    animation: scale50 1s infinite ease-in-out;
+}
+
+.loader-spinner::before {
+    top: auto;
+    bottom: 0;
+    background-color: var(--color-2);
+    animation-delay: 0.5s;
+}
+
+@keyframes rotation {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes scale50 {
+    0%,
+    100% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1);
+    }
+}

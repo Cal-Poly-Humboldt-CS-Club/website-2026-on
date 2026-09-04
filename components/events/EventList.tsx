@@ -14,7 +14,6 @@ const EventList: React.FC<EventListProps> = ({ events, className }) => {
     return (
         <>
         <div className={`${style.container} ${className}`}>
-            {events.length === 0 && <p>No events found</p>}
             {events.map((event) => (
                 <EventCard
                     id={event.id}
