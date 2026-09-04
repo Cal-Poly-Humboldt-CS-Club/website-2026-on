@@ -53,16 +53,18 @@
     font-weight: bold;
     margin: 0;
     margin-bottom: 1.1rem;
-    color: var(--text-color-bold);
+    color: var(--text-bold-color);
     letter-spacing: 0.1px;
 
     display: flex;
     align-items: center;
 }
-.title img {
+.title svg {
     width: 1.4rem;
     height: 1.4rem;
     margin-left: 0.5rem;
+    margin-bottom: 0.2rem;
+    fill: var(--text-bold-color);
 }
 .description {
     font-size: 1.2rem;
