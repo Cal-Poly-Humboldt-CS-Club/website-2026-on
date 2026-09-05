@@ -6,10 +6,12 @@ time: '6-7:30 pm'
 location: 'bss 302'
 description: 'What is copilot? How do you use it? Find out from industry professionals at Microsoft'
 thumbnail: '/event-files/abc.jpg'
+unlisted: true
 tags:
     - 'talk'
     - 'AI'
 ---
+
 
 # This is event 1 oooo!
 
