@@ -85,7 +85,7 @@ export default function AboutPage() {
           <LeadershipCard
             name="Enrique Lopez"
             role="President"
-            image="/headshots/example1.jpg"
+            image="/headshots/enrique.jpg"
             email="el259@humboldt.edu"
           />
           <LeadershipCard
@@ -97,7 +97,7 @@ export default function AboutPage() {
           <LeadershipCard
             name="Skyler Hunsinger"
             role="Vice President"
-            image="/headshots/example2.jpg"
+            image="/headshots/skyler.jpg"
             email="sh2824@humboldt.edu"
           />
           <LeadershipCard
@@ -109,7 +109,7 @@ export default function AboutPage() {
           <LeadershipCard
             name="Andrew Gallimore"
             role="Website Manager"
-            image="/headshots/example4.jpg"
+            image="/headshots/andrew.jpg"
             email="aeg108@humboldt.edu"
           />
       </div>
@@ -152,9 +152,9 @@ export default function AboutPage() {
         </section>
       </div>
 
-      <section>
+      <section className={styles.contact}>
         <h2>Contact</h2>
-        <p>Email: example@club.com</p>
+        <p>Email: compsci@humboldt.edu</p>
       </section>
     </div>
   );

@@ -49,17 +49,17 @@ export default function AttributionPage() {
         <section className={styles.section}>
           <h2>Organization Statement</h2>
           <p>
-            Computer Science Club Humboldt (CS Club Humboldt) is a Registered Student Organization at Cal Poly Humboldt. The Cal Poly Humboldt name is used only to identify the organization’s location. It does not imply sponsorship by Cal Poly Humboldt or that the organization is an official agent of the university.
+            Computer Science Club Humboldt (CS Club Humboldt) is a Registered Student Organization at Cal Poly Humboldt. The Cal Poly Humboldt name is used only to identify the organization's location. It does not imply sponsorship by Cal Poly Humboldt or that the organization is an official agent of the university.
           </p>
         </section>
 
         <section className={styles.section}>
           <h2>Website Maintenance</h2>
           <p>
-            This website is maintained by Andrew.
+            This website is maintained by Andrew and other officers.
           </p>
           <p>
-            For direct website questions, email <a href="mailto:andrew@gexample.com">andrew@gexample.com</a>.
+            For direct website questions, email <a href="mailto:andrew@gexample.com">aeg108@humboldt.edu</a>.
           </p>
           <p>
             For general club questions, email <a href="mailto:compsci@humboldt.edu">compsci@humboldt.edu</a>.
@@ -69,7 +69,7 @@ export default function AttributionPage() {
         <section className={styles.section}>
           <h2>Ownership</h2>
           <p>
-            Ownership of this website transfers with the club’s leadership for the current year.
+            Ownership of this website transfers with the club's leadership for the current year.
           </p>
           <p>
             Check the <Link href="/about">About Us</Link> page for current leadership information.
