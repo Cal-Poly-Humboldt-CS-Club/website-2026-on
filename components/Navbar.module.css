@@ -40,15 +40,16 @@
 .hamburger {
     display: none !important;
 }
-.hamburger img {
+.hamburger svg {
     width: 28px;
     height: 28px;
     padding: 3px;
+    fill: var(--text-darkest)
 }
 .hamshow {
     z-index: 11000;
 }
-.hamshow img {
+.hamshow svg {
     display: none;
 }
 .hamX {

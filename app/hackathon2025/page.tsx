@@ -7,7 +7,13 @@ export default function AboutPage() {
     <div className={`${styles.hackathonPage} hackathon2025-page`}>
       <div className={`w3-row-padding ${styles.hackathonContent}`} id="postbody">
         <div className={`${styles.hackBanner} ${styles.fullWidth}`}>
-          <img src="hackathon2025/banner.png" alt="Hackathon For Social Good 2025" />
+          <Image
+            src="/hackathon2025/banner.png"
+            alt="Hackathon For Social Good 2025 Banner"
+            width={1450}
+            height={400}
+            sizes="100vw"
+          />
         </div>
 
         <div className={`${styles.fullWidth} ${styles.hackSignups}`}>
@@ -18,11 +24,42 @@ export default function AboutPage() {
           </Button>
 
           <div className={styles.imageGrid}>
-            <img className={styles.mainImage} src="hackathon2025/hack25_1.jpg" alt="Hackathon 2025" />
-            <img src="hackathon2025/hack25_2.jpg" alt="Hackathon 2025" />
-            <img src="hackathon2025/hack25_3.jpg" alt="Hackathon 2025" />
-            <img src="hackathon2025/hack25_4.jpg" alt="Hackathon 2025" />
-            <img src="hackathon2025/hack25_5.jpg" alt="Hackathon 2025" />
+            <Image
+              className={styles.mainImage}
+              src="/hackathon2025/hack25_1.jpg"
+              alt="Hackathon 2025"
+              width={1400}
+              height={934}
+              sizes="(max-width: 855px) 100vw, 1100px"
+            />
+            <Image
+              src="/hackathon2025/hack25_2.jpg"
+              alt="Hackathon 2025"
+              width={900}
+              height={600}
+              sizes="(max-width: 855px) 100vw, (max-width: 1700px) 540px, 540px"
+            />
+            <Image
+              src="/hackathon2025/hack25_3.jpg"
+              alt="Hackathon 2025"
+              width={900}
+              height={600}
+              sizes="(max-width: 855px) 100vw, (max-width: 1700px) 540px, 540px"
+            />
+            <Image
+              src="/hackathon2025/hack25_4.jpg"
+              alt="Hackathon 2025"
+              width={900}
+              height={600}
+              sizes="(max-width: 855px) 100vw, (max-width: 1700px) 540px, 540px"
+            />
+            <Image
+              src="/hackathon2025/hack25_5.jpg"
+              alt="Hackathon 2025"
+              width={900}
+              height={600}
+              sizes="(max-width: 855px) 100vw, (max-width: 1700px) 540px, 540px"
+            />
           </div>
         </div>
 
@@ -69,6 +106,7 @@ export default function AboutPage() {
                 alt="Coast Central Credit Union"
                 width={555}
                 height={125}
+                sizes="300px"
                 style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
               />
             </li>
@@ -78,6 +116,7 @@ export default function AboutPage() {
                 alt="Cal Poly Humboldt Office of Student Life & Jackpot!"
                 width={1200}
                 height={300}
+                sizes="300px"
                 style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
               />
             </li>
@@ -87,6 +126,7 @@ export default function AboutPage() {
                 alt="Cal Poly Humboldt Library"
                 width={975}
                 height={338}
+                sizes="300px"
                 style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
               />
             </li>
@@ -96,6 +136,7 @@ export default function AboutPage() {
                 alt="Coastline Financial Services"
                 width={960}
                 height={300}
+                sizes="300px"
                 style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
               />
             </li>
@@ -105,6 +146,7 @@ export default function AboutPage() {
                 alt="Krisp"
                 width={394}
                 height={197}
+                sizes="300px"
                 style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
               />
             </li>
@@ -114,6 +156,7 @@ export default function AboutPage() {
                 alt="Bright and Green Humboldt"
                 width={1366}
                 height={499}
+                sizes="300px"
                 style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
               />
             </li>
@@ -123,6 +166,7 @@ export default function AboutPage() {
                 alt="Rotary Club of Arcata Sunrise"
                 width={2297}
                 height={606}
+                sizes="300px"
                 style={{ maxWidth: '100%', maxHeight: '100%', objectFit: 'contain' }}
               />
             </li>
@@ -151,7 +195,13 @@ export default function AboutPage() {
             <ul>
               <li>
                 <div className={styles.profile}>
-                  <img src="/hackathon2025/mentors/Sharon Tuttle.jpg" alt="Judge 1" />
+                  <Image
+                    src="/hackathon2025/mentors/Sharon Tuttle.jpg"
+                    alt="Sharon Tuttle"
+                    width={500}
+                    height={537}
+                    sizes="100px"
+                  />
                 </div>
                 <div>
                   <h2>Sharon Tuttle</h2>
@@ -161,7 +211,13 @@ export default function AboutPage() {
               </li>
               <li>
                 <div className={styles.profile}>
-                  <img src="/hackathon2025/mentors/Casey Hefner.jpg" alt="Judge 1" />
+                  <Image
+                    src="/hackathon2025/mentors/Casey Hefner.jpg"
+                    alt="Casey Hefner"
+                    width={500}
+                    height={500}
+                    sizes="100px"
+                  />
                 </div>
                 <div>
                   <h2>Casey Hefner</h2>
@@ -171,7 +227,13 @@ export default function AboutPage() {
               </li>
               <li>
                 <div className={styles.profile}>
-                  <img src="/hackathon2025/mentors/Robert S.jpg" alt="Judge 1" />
+                  <Image
+                    src="/hackathon2025/mentors/Robert S.jpg"
+                    alt="Bob Schoenfield"
+                    width={500}
+                    height={516}
+                    sizes="100px"
+                  />
                 </div>
                 <div>
                   <h2>Bob Schoenfield</h2>
@@ -214,7 +276,12 @@ export default function AboutPage() {
             <ul>
               <li>
                 <div className={styles.profile}>
-                  <img src="/hackathon2025/mentors/Edwin Espinoza.jpg" alt="Edwin Espinoza" />
+                  <Image
+                    src="/hackathon2025/mentors/Edwin Espinoza.jpg"
+                    alt="Edwin Espinoza"
+                    width={500}
+                    height={500}
+                    sizes="100px" />
                 </div>
                 <div>
                   <h2>Edwin Espinoza</h2>
@@ -224,7 +291,12 @@ export default function AboutPage() {
               </li>
               <li>
                 <div className={styles.profile}>
-                  <img src="/hackathon2025/mentors/Siri Varma Vegiraju.jpg" alt="Siri Varma Vegiraju" />
+                  <Image
+                    src="/hackathon2025/mentors/Siri Varma Vegiraju.jpg"
+                    alt="Siri Varma Vegiraju"
+                    width={500}
+                    height={500}
+                    sizes="100px" />
                 </div>
                 <div>
                   <h2>Siri Varma Vegiraju</h2>
@@ -234,7 +306,12 @@ export default function AboutPage() {
               </li>
               <li>
                 <div className={styles.profile}>
-                  <img src="/hackathon2025/mentors/Tara Strickwerda.jpg" alt="Tara Strickwerda" />
+                  <Image
+                    src="/hackathon2025/mentors/Tara Strickwerda.jpg"
+                    alt="Tara Strickwerda"
+                    width={2292}
+                    height={2292}
+                    sizes="100px" />
                 </div>
                 <div>
                   <h2>Tara Strickwerda</h2>
@@ -244,7 +321,12 @@ export default function AboutPage() {
               </li>
               <li>
                 <div className={styles.profile}>
-                  <img src="/hackathon2025/mentors/Anthony Cavuoti.jpg" alt="Anthony Cavuoti" />
+                  <Image
+                    src="/hackathon2025/mentors/Anthony Cavuoti.jpg"
+                    alt="Anthony Cavuoti"
+                    width={500}
+                    height={500}
+                    sizes="100px" />
                 </div>
                 <div>
                   <h2>Anthony Cavuoti</h2>

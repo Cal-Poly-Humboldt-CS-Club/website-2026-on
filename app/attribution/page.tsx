@@ -42,7 +42,7 @@ export default function AttributionPage() {
         <section className={styles.section}>
           <h2>Icons</h2>
           <p>
-            Icons used on this website are provided by <a href="https://icons8.com" target="_blank" rel="noopener noreferrer">Icon8</a>.
+            Icons used on this website are largely provided by <a href="https://icons8.com" target="_blank" rel="noopener noreferrer">Icon8</a>,. Additional specific icons, such as the discord icon, are provided by <a href="https://www.svgrepo.com" target="_blank" rel="noopener noreferrer">SVG Repo</a>.
           </p>
         </section>
 

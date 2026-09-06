@@ -132,24 +132,12 @@ export default function FanCarousel({images}: FanCarouselProps) {
                 ))}
             </div>
             <div className={styles.controls}>
-                {currentIndex !== 0 ? (
-                    <Button variant="secondary" isIcon onClick={handleLeftClick}>
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAmklEQVR4nO3XywnCQBRG4cOA7qzDFKC96Ebb0Q4iuNASLSBEAhGyiTuZ/HI+uPtz8yIDkiRJ+rVmnDgFuAH9OFfC4p+T+GE6YENofA+8gBWh8R1wICD+MRN/ZuGK8ZV45Wu6z7ywJwLsk+MHu/QF4h+h+C/Qh0sshXci4Xf6SIjy5UCzJkRJPlJOl2gnC1wI1QDb2hGSJEn/5g0F8noLrORaTAAAAABJRU5ErkJggg==" alt="back"></img>
-                    </Button>
-                ) : (
-                    <Button variant="secondary" isIcon disabled onClick={handleLeftClick}>
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAmklEQVR4nO3XywnCQBRG4cOA7qzDFKC96Ebb0Q4iuNASLSBEAhGyiTuZ/HI+uPtz8yIDkiRJ+rVmnDgFuAH9OFfC4p+T+GE6YENofA+8gBWh8R1wICD+MRN/ZuGK8ZV45Wu6z7ywJwLsk+MHu/QF4h+h+C/Qh0sshXci4Xf6SIjy5UCzJkRJPlJOl2gnC1wI1QDb2hGSJEn/5g0F8noLrORaTAAAAABJRU5ErkJggg==" alt="back"></img>
-                    </Button>
-                )}
-                {currentIndex <= images.length - 7 ? (
-                    <Button variant="secondary" isIcon onClick={handleRightClick}>
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAo0lEQVR4nO3YPQrCQBRF4YNKSrehvZuJTfajK7BIY+X6tNWoBBIRMZ2SXDgfvGK6d2dC5gckSZL0K+uuIu2BR1cHYEaQJXB/C9DWMSlEAZw/AsSF2AJNeogSuH4JcQIWhCgNMRGuxFRUA3+nmiBDITaEiA5QJX9CJXAb2NjmTJzNj8WZH0v0cboALqnN91fKJrX53i75Ut9rn1RWr5EkSZL4pydRFnoPrkVGuQAAAABJRU5ErkJggg==" alt="forward"></img>
-                    </Button>
-                ) : (
-                    <Button variant="secondary" isIcon disabled onClick={handleRightClick}>
-                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAo0lEQVR4nO3YPQrCQBRF4YNKSrehvZuJTfajK7BIY+X6tNWoBBIRMZ2SXDgfvGK6d2dC5gckSZL0K+uuIu2BR1cHYEaQJXB/C9DWMSlEAZw/AsSF2AJNeogSuH4JcQIWhCgNMRGuxFRUA3+nmiBDITaEiA5QJX9CJXAb2NjmTJzNj8WZH0v0cboALqnN91fKJrX53i75Ut9rn1RWr5EkSZL4pydRFnoPrkVGuQAAAABJRU5ErkJggg==" alt="forward"></img>
-                    </Button>
-                )}
+                <Button variant="secondary" isIcon disabled={currentIndex === 0} onClick={handleLeftClick}>
+                    <Image width={48} height={48} src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAmklEQVR4nO3XywnCQBRG4cOA7qzDFKC96Ebb0Q4iuNASLSBEAhGyiTuZ/HI+uPtz8yIDkiRJ+rVmnDgFuAH9OFfC4p+T+GE6YENofA+8gBWh8R1wICD+MRN/ZuGK8ZV45Wu6z7ywJwLsk+MHu/QF4h+h+C/Qh0sshXci4Xf6SIjy5UCzJkRJPlJOl2gnC1wI1QDb2hGSJEn/5g0F8noLrORaTAAAAABJRU5ErkJggg==" alt="back" />
+                </Button>
+                <Button variant="secondary" isIcon disabled={currentIndex > images.length - 7} onClick={handleRightClick}>
+                    <Image width={48} height={48} src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAo0lEQVR4nO3YPQrCQBRF4YNKSrehvZuJTfajK7BIY+X6tNWoBBIRMZ2SXDgfvGK6d2dC5gckSZL0K+uuIu2BR1cHYEaQJXB/C9DWMSlEAZw/AsSF2AJNeogSuH4JcQIWhCgNMRGuxFRUA3+nmiBDITaEiA5QJX9CJXAb2NjmTJzNj8WZH0v0cboALqnN91fKJrX53i75Ut9rn1RWr5EkSZL4pydRFnoPrkVGuQAAAABJRU5ErkJggg==" alt="forward" />
+                </Button>
             </div>
         </div>
     );

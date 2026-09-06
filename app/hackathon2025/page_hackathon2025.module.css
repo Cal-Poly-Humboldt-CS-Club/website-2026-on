@@ -73,6 +73,7 @@
 }
 .hackBanner img {
     width: 100%;
+    height: auto;
 }
 
 /* Makes a grid of cards... */
@@ -198,11 +199,13 @@
 }
 .hackSignups .imageGrid img {
     width: 100%;
+    height: auto;
     max-width: min(calc(200px + 20vw), 540px);
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
 }
 .hackSignups .imageGrid .mainImage {
     width: 100%;
+    height: auto;
     max-width: 1100px;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
 }
