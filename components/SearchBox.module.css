@@ -46,7 +46,7 @@
     border-radius: 18px;
 }
 .container > button img {
-    filter: invert(1) !important;
+    fill: var(--text-lightest)
 }
 
 .loading-button {

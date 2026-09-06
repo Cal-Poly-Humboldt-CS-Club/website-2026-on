@@ -1,5 +1,5 @@
-import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getEventById, getEvents } from '../../../lib/eventService';
 import Markdown from 'react-markdown';
@@ -65,7 +65,7 @@ function noEventFound() {
     <p className={styles.noEventFoundText}>Either the event doesn't exist <i>(double check your URL)</i>, or it has been removed...</p>
 
     {/* Explore more */}
-    <p>Explore more events on our <a href="/events">events page</a>.</p>
+    <p>Explore more events on our <Link href="/events">events page</Link>.</p>
   </div>;
 }
 
@@ -89,7 +89,13 @@ const Page = async ({ params }: { params: Params }) => {
     {/* Banner */}
     <div className={styles.row}>
       <div className={`${styles.banner} ${styles.columnCenter}`}>
-        {event.thumbnail && <Image src={event.thumbnail} alt={`Banner for ${event.title}`} width={1000} height={600} />}
+        {event.thumbnail && 
+          <Image
+            src={event.thumbnail}
+            alt={`Banner for ${event.title}`}
+            width={1000}
+            height={600}
+          />}
       </div>
     </div>
 
@@ -165,11 +171,11 @@ const Page = async ({ params }: { params: Params }) => {
           className={`${styles.markdown}`}
           remarkPlugins={[remarkGfm]}
           rehypePlugins={[rehypeHighlight]}
-          components={{ a: CustomLink, img: CustomImage as any }}
+          components={{ a: CustomLink, img: CustomImage }}
         >
           {event.body}
         </Markdown>
-        
+
       </div>
     </div>
   </>

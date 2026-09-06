@@ -105,11 +105,11 @@ export const getEvents = (query: string = '', page: number = 1, limit: number = 
   const events = readEventFiles();
 
   // Debugging all events
-  const eventsForDebug = events.map((event) => ({ id: event.id, title: event.title }));
+  // const eventsForDebug = events.map((event) => ({ id: event.id, title: event.title }));
   // console.log('All events:', eventsForDebug);
 
   // Filtering events by query
-  var filteredEvents = filterEventsByQuery(events, query);
+  let filteredEvents = filterEventsByQuery(events, query);
 
   // Filterint out unlisted events
   filteredEvents = filteredEvents.filter(event => !event.unlisted);
@@ -126,7 +126,7 @@ export const searchEvents = (query: string): EventCardData[] => {
   const events = readEventFiles();
 
   // Filtering events by query and sorting by relevance
-  var filteredEvents = filterEventsByQuery(events, query);
+  let filteredEvents = filterEventsByQuery(events, query);
 
   // Filterint out unlisted events
   filteredEvents = filteredEvents.filter(event => !event.unlisted);
