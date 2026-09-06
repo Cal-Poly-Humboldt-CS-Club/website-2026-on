@@ -59,7 +59,7 @@ export default function AttributionPage() {
             This website is maintained by Andrew and other officers.
           </p>
           <p>
-            For direct website questions, email <a href="mailto:andrew@gexample.com">aeg108@humboldt.edu</a>.
+            For direct website questions, email <a href="mailto:aeg108@humboldt.edu">aeg108@humboldt.edu</a>.
           </p>
           <p>
             For general club questions, email <a href="mailto:compsci@humboldt.edu">compsci@humboldt.edu</a>.

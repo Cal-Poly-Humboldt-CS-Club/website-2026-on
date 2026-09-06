@@ -14,7 +14,6 @@ function setActiveImage(offset: number) {
     if(imageParent[0].getBoundingClientRect().width < 830) {
         // Do computation for 3 images
         imagesList.forEach((image, index) => {
-            console.log(index);
             switch (index) {
                 case 0 + offset:
                     image.classList.add(styles.onDeckLeft);
@@ -53,7 +52,6 @@ function setActiveImage(offset: number) {
     }else {
         // Do computation for 4 images
         imagesList.forEach((image, index) => {
-            console.log(index);
             switch (index) {
                 case 0 + offset:
                     image.classList.add(styles.onDeckLeft);

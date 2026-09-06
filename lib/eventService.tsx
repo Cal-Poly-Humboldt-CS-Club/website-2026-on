@@ -106,7 +106,7 @@ export const getEvents = (query: string = '', page: number = 1, limit: number = 
 
   // Debugging all events
   const eventsForDebug = events.map((event) => ({ id: event.id, title: event.title }));
-  console.log('All events:', eventsForDebug);
+  // console.log('All events:', eventsForDebug);
 
   // Filtering events by query
   var filteredEvents = filterEventsByQuery(events, query);
