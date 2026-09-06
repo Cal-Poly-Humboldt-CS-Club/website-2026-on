@@ -19,6 +19,7 @@ const blackHanSans = Black_Han_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://statuesque-naiad-4bf05f.netlify.app/'),
   title: "CS Club Humboldt",
   description: "Making a welcoming community of fun and support, while supercharging our education at Cal Poly Humboldt!",
 };

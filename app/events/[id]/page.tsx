@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import type { Metadata } from 'next';
 import { getEventById, getEvents } from '../../../lib/eventService';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -47,6 +48,35 @@ export async function generateStaticParams() {
 }
 
 type Params = Promise<{ id: string }>;
+
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const { id } = await params;
+  const event = getEventById(id);
+
+  if (!event) {
+    return {};
+  }
+
+  const socialThumbnail = event.thumbnail?.replace(/\.[^.]+$/, '-social.jpg');
+
+  return {
+    title: event.title,
+    description: event.description,
+    openGraph: {
+      type: 'website',
+      title: event.title,
+      description: event.description,
+      url: `/events/${event.id}`,
+      images: socialThumbnail ? [{ url: socialThumbnail, alt: `Banner for ${event.title}` }] : [],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: event.title,
+      description: event.description,
+      images: socialThumbnail ? [socialThumbnail] : [],
+    },
+  };
+}
 
 const Page = async ({ params }: { params: Params }) => {
   const { id } = await params;
