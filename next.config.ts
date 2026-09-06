@@ -15,10 +15,24 @@ const nextConfig: NextConfig = {
         permanent: false,
       },
       {
+        // Legacy link from old website
+        source: "/activities",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        // Legacy link from old website
+        source: "/discordinvite",
+        destination: "https://discord.com/invite/BFcGatqw6d",
+        permanent: false,
+      },
+      {
         source: "/hackathon",
         destination: "/hackathon2025",
         permanent: false,
       },
+      // TODO: Figure out what to do about /giving when not in a fundraiser
+      // TODO: Handle ICPC link
     ];
   },
 };

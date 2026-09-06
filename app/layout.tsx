@@ -22,6 +22,13 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://statuesque-naiad-4bf05f.netlify.app/'),
   title: "CS Club Humboldt",
   description: "Making a welcoming community of fun and support, while supercharging our education at Cal Poly Humboldt!",
+  openGraph: {
+    images: [{ url: "/Social-image.jpg", alt: "CS Club Humboldt" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/Social-image.jpg"],
+  },
 };
 
 export default function RootLayout({
