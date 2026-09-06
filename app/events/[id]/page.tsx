@@ -9,12 +9,12 @@ import rehypeHighlight from 'rehype-highlight';
 import './vs2015.min.css';
 // import './vs.min.css';
 import styles from './page.module.css';
-import Link from 'next/link';
-import Tag from '../../../components/events/Tag';
+import Tag from '@/components/events/Tag';
+import EventBackLink from '@/components/events/EventBackLink';
 
 // Custom markdown components
-import CustomLink from '../../../components/markdown/link';
-import CustomImage from '../../../components/markdown/image';
+import CustomLink from '@/components/markdown/link';
+import CustomImage from '@/components/markdown/image';
 
 // interface EventPageProps {
 //   event: EventData;
@@ -77,10 +77,7 @@ const Page = async ({ params }: { params: Params }) => {
     <div className={styles.row}>
       {/* Back-button */}
       <div className="options">
-        <Link className={styles.backLink} href="../events">
-          <img className={styles.icon} src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAqUlEQVR4nO3YsQ3CMBSE4V+vZwDmSNgBZqBgJqhTwGphBShRaByJgggpBX6X3Cddf8+2LNlgZmZmy7EDWgQF0AFDyQWx8reP8mO2CJd/ABtEy7+AIwLlrxPlTyQXLl9JeOUrCa98Rd2Xq/LfuQOHOeXbBOWHkn7OAI36AFmOUA/sWeMNNPIQWYSPUxLhnUgilJ+Uv4Z4KjzqF/GtMvWxdUZUU2JmZmar8AYiRAS6GnW2RwAAAABJRU5ErkJggg==" alt="left"></img>
-          Back
-        </Link>
+        <EventBackLink eventId={id} className={styles.backLink} iconClassName={styles.icon} />
       </div>
       {/* Title/description */}
       <article className={styles.columnCenter}>

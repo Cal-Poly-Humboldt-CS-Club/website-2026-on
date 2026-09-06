@@ -1,5 +1,7 @@
 // Make a card for each event, it should have a title, date, and description
 
+'use client';
+
 import React from 'react';
 import Image from 'next/image';
 import style from './EventCard.module.css';
@@ -16,6 +18,13 @@ const Event: React.FC<EventCardData> = ({ title, date, description, thumbnail, p
   const year = dateObj.getFullYear();
   date = `${month} ${day}, ${year}`;
 
+  const rememberOrigin = () => {
+    sessionStorage.setItem(
+      `event-back-link:${id}`,
+      `${window.location.pathname}${window.location.search}${window.location.hash}`
+    );
+  };
+
   // Generating colored placeholder for image if there is no thumbnail
   
 
@@ -30,7 +39,7 @@ const Event: React.FC<EventCardData> = ({ title, date, description, thumbnail, p
         </>
       ) : (
         <>
-          <Link href={`/events/${id}`} className={style.imageContainer}>
+          <Link href={`/events/${id}`} className={style.imageContainer} onClick={rememberOrigin}>
             <div className={style.date}>
               <p>{date}</p>
             </div>
@@ -43,7 +52,7 @@ const Event: React.FC<EventCardData> = ({ title, date, description, thumbnail, p
             />}
           </Link>
           {/* <Link href='/events/microsoft-copilot-25'> */}
-          <Link href={`/events/${id}`}>
+          <Link href={`/events/${id}`} onClick={rememberOrigin}>
             <h2 className={style.title}>
               {title}
               <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="24" height="24" viewBox="0 0 24 24">
