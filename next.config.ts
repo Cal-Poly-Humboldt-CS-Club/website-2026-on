@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/discord",
-        destination: "https://discord.gg/your-invite-code",
+        destination: "https://discord.com/invite/BFcGatqw6d",
         permanent: false,
       },
       {

@@ -46,7 +46,7 @@ export default function JoinPage() {
           Join our Discord to stay updated, ask questions, and connect with other members.
         </p>
 
-        <Button className={styles.discordButton} href="https://discord.gg/9PCcUwe6">
+        <Button className={styles.discordButton} href="/discord">
           Join Discord
         </Button>
       </section>

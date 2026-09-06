@@ -30,6 +30,12 @@
   align-items: center;
   margin-bottom: 60px;
 }
+@media (prefers-color-scheme: light) {
+  .eyes {
+    --color-1: var(--panel-bg);
+  }
+}
+
 .eyes::after,
 .eyes::before {
   content: '';
@@ -113,6 +119,7 @@
     margin-top: 24px;
     margin-bottom: 24px;
     overflow: hidden;
+    padding: 0 !important;
 }
 
 .banner img {
