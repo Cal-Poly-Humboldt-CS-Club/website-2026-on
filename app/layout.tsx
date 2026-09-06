@@ -33,7 +33,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${almarai.variable} ${blackHanSans.variable}`}>
         <Navbar/>
-        {children}
+        <main>{children}</main>
 
         <Footer />
       </body>

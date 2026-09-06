@@ -1,7 +1,108 @@
-/* .page {
-    background: ;
-    color: black;
-} */
+/* Styles for the page when no event is found */
+.noEventFound {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.noEventFoundText {
+    max-width: 500px;
+    margin-bottom: 48px;
+}
+.noEventFound a {
+    color: var(--link-color);
+    text-decoration: underline;
+}
+
+.eyes {
+  --color-1: #fff;
+  --color-2: #0d161b;
+  --size: 2.2px;
+
+  position: relative;
+  width: calc(108 * var(--size));
+  height: calc(48 * var(--size));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+}
+.eyes::after,
+.eyes::before {
+  content: '';
+  display: inline-block;
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  background-color: var(--color-1);
+  background-image: radial-gradient(
+    circle calc(14 * var(--size)),
+    var(--color-2) 100%,
+    transparent 0
+  );
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  animation:
+    eyeMove 10s infinite,
+    blink 10s infinite;
+    animation-delay: -5s, 0s;
+}
+@keyframes eyeMove {
+  0%,
+  10% {
+    background-position: 0 0;
+  }
+  13%,
+  40% {
+    background-position: calc(-15 * var(--size)) 0;
+  }
+  43%,
+  70% {
+    background-position: calc(15 * var(--size)) 0;
+  }
+  73%,
+  90% {
+    background-position: 0 calc(15 * var(--size));
+  }
+  93%,
+  100% {
+    background-position: 0 0;
+  }
+}
+@keyframes blink {
+  0%,
+  10%,
+  12%,
+  20%,
+  22%,
+  40%,
+  42%,
+  60%,
+  62%,
+  70%,
+  72%,
+  90%,
+  92%,
+  98%,
+  100% {
+    height: calc(48 * var(--size));
+  }
+  11%,
+  21%,
+  41%,
+  61%,
+  71%,
+  91%,
+  99% {
+    height: calc(18 * var(--size));
+  }
+}
+
+
+
+/* Regular page styles */
 .banner {
     display: flex;
     justify-content: center;
@@ -85,9 +186,10 @@
     padding: 0 16px;
     color: var(--text-lightest);
 }
-.details .block img {
+.details .block svg {
     width: 80px;
     height: 80px;
+    fill: var(--text-lightest);
 }
 
 .row {
