@@ -7,6 +7,7 @@ import sharp from 'sharp';
 
 const eventsDirectory = path.join(process.cwd(), 'events');
 const publicDirectory = path.join(process.cwd(), 'public');
+const overlayPath = path.join(process.cwd(), 'build-scripts', 'social-overlay.png');
 
 const socialImagePath = (thumbnail) => thumbnail.replace(/\.[^.]+$/, '-social.jpg');
 
@@ -30,6 +31,7 @@ for (const eventFile of eventFiles) {
 
   await sharp(sourcePath)
     .resize(1200, 630, { fit: 'cover', position: 'attention' })
+    .composite([{ input: overlayPath, gravity: 'west' }])
     .jpeg({ quality: 85, progressive: true })
     .toFile(outputPath);
 
