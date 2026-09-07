@@ -44,6 +44,9 @@ export default function AttributionPage() {
           <p>
             Icons used on this website are largely provided by <a href="https://icons8.com" target="_blank" rel="noopener noreferrer">Icon8</a>. Additional specific icons, such as the discord and location icons, are provided by <a href="https://www.svgrepo.com" target="_blank" rel="noopener noreferrer">SVG Repo</a>.
           </p>
+          <p>
+            The animated icons and loaders used on this website are sourced from <a href="https://cssloaders.github.io" target="_blank" rel="noopener noreferrer">cssloaders.github.io</a> by Vineeth TR. Specifically we used their loaders for the eyes on the event-not-found page and the globe and dot spinners on the event searches.
+          </p>
         </section>
 
         <section className={styles.section}>
