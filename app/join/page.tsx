@@ -21,11 +21,11 @@ export default function JoinPage() {
       <section className={styles.section}>
         <h2>When & Where We Meet</h2>
         <p>
-          We typically meet every two weeks on campus, in <b>BSS 302</b>, on <b>Mondays</b>.
+          We typically meet every two weeks on Mondays from <b>5-6:30pm</b> in BSS <b>BSS 313</b> (Fall 2026).
         </p>
-        <p>
+        {/* <p>
           For the fall semester, this will be on 8/27, 9/10, 9/24, and 10/8, 10/22 before we do the ICPC competition, and then 11/5, 11/19, and 12/3 afterwards.
-        </p>
+        </p> */}
         <p>
           In the spring semester, we will continue our bi-weekly meetings on campus. Will announce meeting dates.
         </p>
