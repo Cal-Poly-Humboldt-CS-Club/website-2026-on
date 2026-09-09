@@ -40,8 +40,18 @@ export default function JoinPage() {
           <p>
             We typically meet every two weeks on Mondays from <b>5-6:30pm</b> in <b>BSS 313</b> (Fall 2026).
           </p>
+          <ul>
+            <li>September 4th, 2026, 5-6:30pm in BSS 313</li>
+            <li>September 21th, 2026, 5-6:30pm in BSS 313</li>
+            <li>October 5nd, 2026, 5-6:30pm in BSS 313</li>
+            <li>October 19th, 2026, 5-6:30pm in BSS 313</li>
+            <li>November 2nd, 2026, 5-6:30pm in BSS 313</li>
+            <li>November 16th, 2026, 5-6:30pm in BSS 313</li>
+            <li>November 30th, 2026, 5-6:30pm in BSS 313</li>
+          </ul>
+
           <p>
-            In the spring semester, we will continue our bi-weekly meetings on campus. Will announce meeting dates.
+            In the spring semester, we will continue our bi-weekly meetings on campus. 
           </p>
         </section>
       </div>
