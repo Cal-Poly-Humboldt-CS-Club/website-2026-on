@@ -23,7 +23,7 @@ A Game Jam is a comepetition where many individuals, given a theme, are encourag
 
 This is Enrique, the CS Club president for the 2026 school year. I would like to thank both the Game Development club and and the CS Club for coming together and organizing this event. We are really excited to see what students come up, given our theme, which we thing is pretty representative of Humboldt and something students can enjoy participating in. 
 
-![Game Jam Flyer](../event-files/game-jam-2026/game-jam-2026-banner-hort.png)
+![Game Jam Flyer](../event-files/game-jam-2026/game-jam-2026-baner-hort.png)
 
 # Bugs n' Slugs
 
