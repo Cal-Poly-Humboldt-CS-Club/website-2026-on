@@ -5,7 +5,7 @@ date: '2026-09-18'
 time: '5-6:30pm'
 location: 'BBS 313'
 description: 'The CPH Game Development and CS Clubs host their first game jam.'
-thumbnail: ''
+thumbnail: '/event-files/game-jam-2026/game-jam-2026-baner-hort.png'
 tags:
     - 'events'
     - 'game development'
@@ -23,7 +23,7 @@ A Game Jam is a comepetition where many individuals, given a theme, are encourag
 
 This is Enrique, the CS Club president for the 2026 school year. I would like to thank both the Game Development club and and the CS Club for coming together and organizing this event. We are really excited to see what students come up, given our theme, which we thing is pretty representative of Humboldt and something students can enjoy participating in. 
 
-![Game Jam Flyer](../event-files/game-jam-2026/game-jam-2026-baner-hort.png)
+![Game Jam Flyer](../event-files/game-jam-2026/game-jam-2026-flyer.jpg)
 
 # Bugs n' Slugs
 
@@ -42,7 +42,7 @@ Why? We originally thought of banana slugs, and the time of planning, they were 
     - In person on 9/28
     - In person in BSS 313, 5-6:30pm
 
-![Link to the Itch page](https://itch.io/jam/humboldt-jam)
+Link to the [Itch page](https://itch.io/jam/humboldt-jam)
 
 ## Games!
 
