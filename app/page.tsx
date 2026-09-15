@@ -20,6 +20,9 @@ export default function Home() {
             height="819"
             loading="eager"
           />
+          <div>
+            {/* DO NOT REMOVE */}
+          </div>
         </div>
         <div className={styles.landingBody}>
           <h1>Computer Science Club Humboldt</h1>

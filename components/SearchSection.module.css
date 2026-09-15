@@ -1,9 +1,16 @@
 .nav {
     display: grid;
-    grid-template-columns: auto max-content;
+    grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), max-content));
+    justify-content: center;
     gap: 8px;
     margin-top: 24px;
     margin-bottom: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+}
+.nav > * {
+    min-width: 0;
 }
 
 .loadingButton {

@@ -42,6 +42,11 @@
     width: 0;
     opacity: 0;
 }
+.images > .phantom {
+    opacity: 0 !important;
+    pointer-events: none;
+    flex-shrink: 0;
+}
 .images > .onDeckLeft {
     position: relative;
     transform: translate(200px, 145px) rotate(-15deg);
