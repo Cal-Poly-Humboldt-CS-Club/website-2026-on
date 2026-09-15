@@ -3,7 +3,7 @@ title: 'Humboldt students can make games, but can they jam? A look inside Humbol
 id: 'humboldt-game-jam'
 date: '2026-09-18'
 time: '5-6:30pm'
-location: 'BBS 313'
+location: 'Async'
 description: 'The CPH Game Development and CS Clubs host their first game jam.'
 thumbnail: '/event-files/game-jam-2026/game-jam-2026-baner-hort.png'
 tags:
@@ -34,7 +34,7 @@ Why? We originally thought of banana slugs, and the time of planning, they were 
 ## Event Info
 
 - Creation Portion:
-    - Fully Asynch
+    - Fully Async
     - September 18th to Septmeber 25th
     - Language and Engine agnostic
 - Demo and Judging Portion
