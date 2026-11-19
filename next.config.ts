@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/discord",
-        destination: "https://discord.com/invite/BFcGatqw6d",
+        destination: "https://discord.gg/yS9K3ncfej",
         permanent: false,
       },
       {
@@ -23,7 +23,7 @@ const nextConfig: NextConfig = {
       {
         // Legacy link from old website
         source: "/discordinvite",
-        destination: "https://discord.com/invite/BFcGatqw6d",
+        destination: "https://discord.gg/yS9K3ncfej",
         permanent: false,
       },
       {
